@@ -1,10 +1,12 @@
 "ignore files
+let g:completion_matching_strategy_list=["exact", "substring", "fuzzy"]
 set wildignore+=**/coverage/*
 set wildignore+=**/node_modules/*
 set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
+set completeopt=menuone,noinsert,noselect
 set nu
 set relativenumber
 set nohlsearch

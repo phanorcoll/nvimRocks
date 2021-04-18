@@ -1,6 +1,10 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
 " brackets, comments
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
@@ -26,3 +30,10 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
+
+
+" LSP Server setup
+autocmd BufEnter * lua require'completion'.on_attach()
+lua require'lspconfig'.gopls.setup{}
+lua require'lspconfig'.bashls.setup{}
+
