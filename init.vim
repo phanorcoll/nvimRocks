@@ -1,6 +1,8 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'jiangmiao/auto-pairs'
+
 "Start screen
 Plug 'mhinz/vim-startify'
 
