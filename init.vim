@@ -1,7 +1,9 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 
+" brackets, comments
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
 
 "Start screen
 Plug 'mhinz/vim-startify'
@@ -24,8 +26,3 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
-
-
-"General Remaps
-let mapleader = " "
-inoremap <C-c> <esc>
