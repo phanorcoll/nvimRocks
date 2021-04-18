@@ -17,8 +17,11 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-call plug#end()
+"Colors
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'junegunn/rainbow_parentheses.vim'
 
+call plug#end()
 
 
 "General Remaps
