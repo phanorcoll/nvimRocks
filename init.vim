@@ -1,6 +1,9 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 
+"Start screen
+Plug 'mhinz/vim-startify'
+
 "Telescope 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
