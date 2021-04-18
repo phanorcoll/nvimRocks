@@ -5,6 +5,7 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
+set nu
 set relativenumber
 set nohlsearch
 set hidden
@@ -12,7 +13,6 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nu
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -25,3 +25,9 @@ set isfname+=@-@
 set updatetime=50
 set shortmess+=c
 set colorcolumn=80
+set cursorline
+set clipboard+=unnamedplus
+set splitbelow
+set splitright
+set cmdheight=2
+set mouse=a
