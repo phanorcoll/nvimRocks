@@ -29,6 +29,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 
+" Javascript, JSX, Typescript Syntax Highlight
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+
 call plug#end()
 
 " completion-nvim - Enable TAB to trigger completion
@@ -38,4 +43,4 @@ imap <s-tab> <Plug>(completion_smart_s_tab)
 " LSP Server setup
 lua require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
-
+lua require'lspconfig'.dockerls.setup{on_attach=require'completion'.on_attach}
