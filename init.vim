@@ -31,9 +31,11 @@ Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
 
+" completion-nvim - Enable TAB to trigger completion
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
 
 " LSP Server setup
-autocmd BufEnter * lua require'completion'.on_attach()
-lua require'lspconfig'.gopls.setup{}
-lua require'lspconfig'.bashls.setup{}
+lua require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
 
