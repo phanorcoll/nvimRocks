@@ -33,3 +33,4 @@ set splitbelow
 set splitright
 set cmdheight=2
 set mouse=a
+set autoindent
