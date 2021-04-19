@@ -1,3 +1,4 @@
+"(Neo)Vim Rocks V2
 "Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -26,13 +27,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Colors
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 
 " Javascript, JSX, Typescript Syntax Highlight
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
+
+" multi line selector
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
