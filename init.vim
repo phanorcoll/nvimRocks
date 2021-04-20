@@ -38,7 +38,11 @@ Plug 'HerringtonDarkholme/yats.vim'
 " multi line selector
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+" File explorer
+Plug 'kyazdani42/nvim-tree.lua'
+
 call plug#end()
+
 
 " completion-nvim - Enable TAB to trigger completion
 imap <tab> <Plug>(completion_smart_tab)
