@@ -18,7 +18,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-"Icons for Telescope
+"Icons for Telescope - nvim-tree
 Plug 'kyazdani42/nvim-web-devicons'
 
 "Theme
