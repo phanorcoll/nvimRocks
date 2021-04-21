@@ -73,4 +73,4 @@ You may notice that there are no direct links to any of the configuration files,
 
 Got any suggestions, better plugins, configurations, let me know [@phanor](https://twitter.com/phanor)
 
-** *- Keep Moving Forward -* **
+**- Keep Moving Forward -**
