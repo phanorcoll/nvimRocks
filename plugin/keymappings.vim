@@ -1,5 +1,4 @@
 "General Remaps
-"
 let g:mapleader = " "
 inoremap <C-c> <esc>
 
@@ -31,3 +30,7 @@ vnoremap > >gv
 
 " Commenting
 nnoremap <C-g> <Plug>(gcc)
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <silent><expr> <Tab>   pumvisible() ? "\<C-c>" : "\<Tab>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
