@@ -54,6 +54,9 @@ Plug 'mhinz/vim-signify'
 "Syntaxk highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+"Maximizes and restores current buffer
+Plug 'szw/vim-maximizer'
+
 call plug#end()
 
 "Signify
