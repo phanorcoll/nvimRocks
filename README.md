@@ -69,6 +69,7 @@ You may notice that there are no direct links to any of the configuration files,
 - [ ] Setup terminal integration.
 - [ ] Convert all configuration files to `.lua`.
 - [ ] Improve on keybindings.
+- [ ] Improve installation script
 
 
 Got any suggestions, better plugins, configurations, let me know [@phanor](https://twitter.com/phanor)
