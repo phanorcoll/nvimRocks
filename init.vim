@@ -51,6 +51,9 @@ Plug 'honza/vim-snippets'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'mhinz/vim-signify'
 
+"Syntaxk highlight
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 "Signify
