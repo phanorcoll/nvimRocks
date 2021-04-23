@@ -60,6 +60,11 @@ Plug 'szw/vim-maximizer'
 "Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+"Running tests
+Plug 'janko-m/vim-test'
+
+" Terminal integration
+Plug 'kassio/neoterm'
 
 call plug#end()
 
