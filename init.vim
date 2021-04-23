@@ -57,6 +57,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Maximizes and restores current buffer
 Plug 'szw/vim-maximizer'
 
+"Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+
 call plug#end()
 
 "Signify
