@@ -3,8 +3,8 @@ let g:nvim_tree_width = 40 "30 by default
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
 let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
-let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
-let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
+let g:nvim_tree_auto_close = 0 "0 by default, closes the tree when it's the last window
+let g:nvim_tree_auto_ignore_ft = [ 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
@@ -21,8 +21,8 @@ let g:nvim_tree_lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in 
 let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE' ] " List of filenames that gets highlighted with NvimTreeSpecialFile
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
-    \ 'folders': 0,
-    \ 'files': 0,
+    \ 'folders': 1,
+    \ 'files': 1,
     \ }
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
 "1 by default, notice that if 'files' is 1, it will only display
