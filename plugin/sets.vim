@@ -9,7 +9,7 @@ set wildignore+=**/.git/*
 set completeopt=menuone,noinsert,noselect
 set nu
 set relativenumber
-set nohlsearch
+set hlsearch
 set hidden
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -34,3 +34,5 @@ set splitright
 set cmdheight=2
 set mouse=a
 set autoindent
+filetype plugin indent on                           " enable file detection and plugins
+syntax on                                           " enable syntax highlight
