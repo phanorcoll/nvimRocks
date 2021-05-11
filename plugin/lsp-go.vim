@@ -1,7 +1,5 @@
 
 lua << EOF
-require'lspconfig'.gopls.setup{}
-
 lspconfig = require'lspconfig'
 lspconfig.gopls.setup{
   root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
@@ -50,4 +48,3 @@ EOF
 
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.go lua goimports(1000)
-
