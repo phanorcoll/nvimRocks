@@ -36,3 +36,4 @@ set mouse=a
 set autoindent
 filetype plugin indent on                           " enable file detection and plugins
 syntax on                                           " enable syntax highlight
+let g:python3_host_prog  = '/usr/bin/python3'
