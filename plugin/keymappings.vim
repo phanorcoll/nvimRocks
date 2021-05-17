@@ -4,7 +4,7 @@ let g:mapleader = " "
 
 " Use shift + hjkl to resize windows
 nnoremap <S-j>    :resize -2<CR>
-nnoremap <S-k>    :resize +2<CR>
+"nnoremap <S-k>    :resize +2<CR>
 nnoremap <S-h>    :vertical resize -2<CR>
 nnoremap <S-l>    :vertical resize +2<CR>
 
@@ -29,7 +29,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Commenting
-nnoremap <C-g> <Plug>(gcc)
+"nnoremap <C-g> <Plug>(gcc)
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <silent><expr> <Tab>   pumvisible() ? "\<C-c>" : "\<Tab>"
