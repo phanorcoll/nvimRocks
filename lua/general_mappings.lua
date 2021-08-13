@@ -7,7 +7,7 @@ vim.g.mapleader = ' ' -- sets global variable
 
 options = {noremap = true}
 map('n', '<leader><esc>', ':nohlsearch<cr>', options)
-map('n', '<leader>t', ':split | terminal<cr>', options)
+map('n', '<leader>t', ':vsplit | terminal<cr>', options)
 map('t', '<esc>', '<C-\\><C-n>', options)
 
 -- Move between buffers
