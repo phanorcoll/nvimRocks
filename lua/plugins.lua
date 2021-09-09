@@ -82,5 +82,7 @@ return require('packer').startup(
     -- Terraform
     use 'hashivim/vim-terraform'
 
+    use "sbdchd/neoformat"
+
   end
 )

@@ -94,6 +94,7 @@ nvim_lsp.flow.setup {
 --typescript
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
+  init_options = {documentFormatting = true},
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 }
 -- nvim_lsp.tsserver.setup {
