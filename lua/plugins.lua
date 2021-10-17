@@ -1,3 +1,4 @@
+vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(
   function()
 
@@ -23,13 +24,11 @@ return require('packer').startup(
     use 'sirver/UltiSnips'
     use 'honza/vim-snippets'
 
-    -- Icons for Telescope - nvim-tree
-    use 'kyazdani42/nvim-web-devicons'
-
     -- nvim-treesitter
     use {
-    	'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
+      'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
     }
+
     use 'nvim-treesitter/nvim-treesitter-textObjects'
 
     -- Theme
@@ -45,7 +44,16 @@ return require('packer').startup(
     }
     use 'nvim-telescope/telescope-symbols.nvim'
     -- use '/xiyaowong/telescope-emoji.nvim'
-    use 'kyazdani42/nvim-tree.lua'
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function() require'nvim-tree'.setup {
+	lsp_diagnostics = true,
+	view = {
+	  side = 'right'
+	}
+      } end
+    }
 
     --  Multi line selector
     use {

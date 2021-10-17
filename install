@@ -7,5 +7,5 @@ mkdir -p ~/.config/nvim/lua/phanorcoll
 # link wholesale
 for f in `find . -regex ".*\.vim$\|.*\.lua$"`; do
     rm -rf ~/.config/nvim/$f
-    ln -s ~/dotfiles/nvimRocks/$f ~/.config/nvim/$f
+    ln -s ~/.dotfiles/nvimRocks/$f ~/.config/nvim/$f
 done
