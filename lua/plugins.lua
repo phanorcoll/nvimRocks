@@ -48,7 +48,7 @@ return require('packer').startup(
       'kyazdani42/nvim-tree.lua',
       requires = 'kyazdani42/nvim-web-devicons',
       config = function() require'nvim-tree'.setup {
-	lsp_diagnostics = true,
+	-- lsp_diagnostics = true,
 	view = {
 	  side = 'right'
 	}
@@ -89,6 +89,8 @@ return require('packer').startup(
 
     -- Terraform
     use 'hashivim/vim-terraform'
+    use 'vim-syntastic/syntastic'
+    use 'juliosueiras/vim-terraform-completion'
 
     use "sbdchd/neoformat"
 

@@ -4,8 +4,10 @@ local b = vim.bo -- For the buffer local options
 local cmd = vim.cmd     -- execute Vim commands
 local exec = vim.api.nvim_exec       -- execute Vimscript
 
-vim.g.syntax_on = 'enable'
-
+vim.g.syntastic_always_populate_loc_list = 1
+vim.g.syntastic_auto_loc_list = 1
+vim.g.syntastic_check_on_open = 1
+vim.g.syntastic_check_on_wq = 1
 -- Global options
 o.lazyredraw = true
 o.splitbelow = true
