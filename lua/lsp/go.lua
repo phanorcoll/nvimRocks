@@ -1,4 +1,3 @@
--- TODO: add format on save
 require('go').config.update_tool('quicktype', function(tool)
     tool.pkg_mgr = 'npm'
 end)
