@@ -1,11 +1,47 @@
 #!/usr/bin/env bash
-mkdir -p ~/.config/nvim/plugin
-mkdir -p ~/.config/nvim/after/plugin
-mkdir -p ~/.config/nvim/lua
-mkdir -p ~/.config/nvim/lua/phanorcoll
 
-# link wholesale
+#create directory tree for nvim
+mkdir -p ~/.config/nvim/{plugin,lua/{plugins,lsp}}
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+echo ''
+info 'linking dotfiles with Neovim file tree'
+info '============================================='
 for f in `find . -regex ".*\.vim$\|.*\.lua$"`; do
-    rm -rf ~/.config/nvim/$f
-    ln -s ~/.dotfiles/nvimRocks/$f ~/.config/nvim/$f
+        rm -rf ~/.config/nvim/$f
+	info $f
+        ln -s ~/.dotfiles/nvimRocks/$f ~/.config/nvim/$f
 done
+success 'linking complete....'
+echo ''
+
+#echo ''
+#info 'Installing plugins'
+#info '============================================='
+#if test $(which nvim)
+#then
+#  nvim -v +PackerInstall +qall
+#  success 'Plugin installation complete'
+#  info 'open nvim and run :checkhealth for more info'
+#else
+#    fail 'nvim not found in path.'
+#fi
+#echo ''
+
+
+info 'open nvim and run :PackerInstall to install plugins'
+info 'open nvim and run :checkhealth for more info on extra dependencies'
+echo ''
+success 'Congratulations!! now run nvim and enjoy'

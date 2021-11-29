@@ -1,35 +1,27 @@
--- loads plugins
-require('plugins')
-
--- loads Inital option settings (Global, Window and Buffer)
+require('impatient')
+require('config')
+require('colorscheme')
 require('settings')
+require('plugins')
+require('keymappings')
+require('plugins.lualine')
+require('plugins.lint')
 
--- loads General key mappings
-require('general_mappings')
+--Lsp
+require('lsp.config')
+require('lsp.bash')
+require('lsp.css')
+require('lsp.dart')
+require('lsp.graphql')
+require('lsp.html')
+require('lsp.json')
+require('lsp.tsserver')
+require('lsp.terraform')
+require('lsp.docker')
+require('lsp.go')
+require('lsp.tailwindcss')
+require('lsp.yaml')
 
--- Plugins configs
--- If key mapping is needed for plugins,they are inside each config file.
-require('theme_conf') -- theme
-require('lsp_conf') -- lsp
-require('lsp_saga_conf') --  autocompletion
-require('lualine_conf') -- status line
-require('go_lsp_conf')
-require('telescope_conf') -- telescope
-require('nvim_tree_conf')
-require('lazygit_conf')
-require('dashboard_conf')
-require('completion_conf')
-require('terraform_conf')
-require('autopair_conf')
-require('lsp_colors_config')
-require('docker_lsp_config')
-
--- validate if LSP is installed
-local ok, _ = pcall(function() require('lsp_conf') end)
-
-if not ok then
-  print("No LSP")
-end
 
 -- Runs PackerCompiler whenever plugins.lua is updated
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])

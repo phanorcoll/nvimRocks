@@ -1,4 +1,3 @@
-
 local on_attach = function(client, bufnr)
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
@@ -8,7 +7,6 @@ local on_attach = function(client, bufnr)
   end
 end
 
-require'lspconfig'.terraformls.setup{
+require'lspconfig'.dartls.setup{
   on_attach = on_attach
 }
-
