@@ -19,8 +19,6 @@ require('lsp.tsserver')
 require('lsp.terraform')
 require('lsp.docker')
 require('lsp.go')
-require('lsp.tailwindcss')
-require('lsp.yaml')
 
 
 -- Runs PackerCompiler whenever plugins.lua is updated

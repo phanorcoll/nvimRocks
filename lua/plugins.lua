@@ -117,6 +117,7 @@ use {'David-Kunz/cmp-npm', requires = 'nvim-lua/plenary.nvim', after = 'nvim-cmp
 use {'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'}, config = "require('plugins.tree')" }
 
 --Dart/Flutter
+use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 use 'dart-lang/dart-vim-plugin'
 use 'natebosch/vim-lsc'
 use 'natebosch/vim-lsc-dart'
