@@ -13,7 +13,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     'additionalTextEdits',
   }
 }
-
+local null_ls = require("null-ls")
 -- npm install -g typescript typescript-language-server
 require'lspconfig'.tsserver.setup({
   capabilities = capabilities,
@@ -25,6 +25,9 @@ require'lspconfig'.tsserver.setup({
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
     buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
+    if client.resolved_capabilities.document_formatting then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    end
     ts_utils.setup {
         debug = false,
         disable_commands = false,
@@ -64,5 +67,15 @@ require'lspconfig'.tsserver.setup({
     }
 
     ts_utils.setup_client(client)
+    if client.resolved_capabilities.document_formatting then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    end
+    null_ls.setup({
+      sources = {
+          null_ls.builtins.code_actions.eslint,
+          null_ls.builtins.formatting.prettier,
+      },
+      on_attach = on_attach,
+    })
   end
 })

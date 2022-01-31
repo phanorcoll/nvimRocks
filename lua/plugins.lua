@@ -100,6 +100,7 @@ use {'tami5/lspsaga.nvim', config = "require('plugins.saga')"}
 use {'onsails/lspkind-nvim', config = "require('plugins.kind')"}
 use {'folke/lsp-trouble.nvim', config = "require('plugins.trouble')"}
 use {'nvim-lua/popup.nvim'}
+use {'jose-elias-alvarez/null-ls.nvim'}
 use {'jose-elias-alvarez/nvim-lsp-ts-utils', after = {'nvim-treesitter'}}
 
 -- LSP Cmp
