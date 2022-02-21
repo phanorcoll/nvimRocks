@@ -86,16 +86,16 @@ use {'mfussenegger/nvim-lint'}
 use {'heavenshell/vim-jsdoc'}
 
 -- Telescope
--- use {'nvim-telescope/telescope.nvim', config = "require('plugins.telescope')",
---    requires = {
---      {'nvim-lua/popup.nvim'},
---      {'nvim-lua/plenary.nvim'},
---      {'nvim-telescope/telescope-fzf-native.nvim'}
---    }
---  }
---use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
---use {'ahmedkhalf/project.nvim', config = function() require('project_nvim').setup{} end}
---use {'/xiyaowong/telescope-emoji.nvim'}
+ use {'nvim-telescope/telescope.nvim', config = "require('plugins.telescope')",
+    requires = {
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-telescope/telescope-fzf-native.nvim'}
+    }
+  }
+use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use {'ahmedkhalf/project.nvim', config = function() require('project_nvim').setup{} end}
+use {'/xiyaowong/telescope-emoji.nvim'}
 
 -- General Plugins
 use {'tpope/vim-commentary'}

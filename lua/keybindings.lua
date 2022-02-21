@@ -1,6 +1,10 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true }
 
+-- lead key
+map('n', '<Space>', '', {})
+vim.g.mapleader = ' ' -- sets global variable
+
 -- Save file by CTRL-S
 map("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 map("i", "<C-s>", "<ESC> :w<CR>", { noremap = true, silent = true })
@@ -46,6 +50,19 @@ nkeymap("<C-h>", "<C-w>h")
 nkeymap("<C-j>", "<C-w>j")
 nkeymap("<C-k>", "<C-w>k")
 nkeymap("<C-l>", "<C-w>l")
+
+
+-- Telescope General
+nkeymap('<leader>pf', '<cmd>lua require("telescope.builtin").find_files({prompt_title="Searching for a file?"})<cr>')
+nkeymap('<leader>ps', '<cmd>lua require("telescope.builtin").live_grep({prompt_title="Search for a string"})<cr>')
+nkeymap('<leader>pb', '<cmd>lua require("telescope.builtin").buffers({prompt_title="Search Open Files"})<cr>')
+nkeymap('<leader>qf', '<cmd>lua require("telescope.builtin").quickfix({prompt_title="Fix the errors"})<cr>')
+nkeymap('<leader>lf', '<cmd>lua require("telescope.builtin").loclist()<cr>')
+nkeymap('<leader>of', '<cmd>lua require("telescope.builtin").oldfiles({prompt_title="Previous opened files"})<cr>')
+nkeymap('<leader>/', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find({prompt_title="Search current buffer"})<cr>')
+nkeymap("<Leader>pw", "<cmd>Telescope grep_string<CR><ESC>") -- finds word in project
+nkeymap("<Leader>e", "<cmd>Telescope emoji<CR>") -- finds word in project
+nkeymap("<Leader>h", '<cmd>TodoTelescope<CR>') -- finds word in project
 
 -- Breaking a bad habit
 nkeymap('<Up>', [[:echoerr "Dont use arrow keys!!"<cr>]])
