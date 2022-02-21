@@ -59,8 +59,10 @@ require'nvim-tree'.setup {
       custom_only = false,
       -- list of mappings to set on the tree manually
       list = {
-        { key = "<C-v>",                        action = "vsplit" },
       }
     }
   }
 }
+
+vim.api.nvim_set_keymap("n", "<S-e>", "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>', {noremap = true, silent = true})
