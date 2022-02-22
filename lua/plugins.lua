@@ -57,6 +57,7 @@ use {'nvim-treesitter/nvim-treesitter-textobjects', after = {'nvim-treesitter'}}
 use {'neovim/nvim-lspconfig'}
 use {'williamboman/nvim-lsp-installer', config = "require('lsp.installer')"}
 use {'onsails/lspkind-nvim', config = "require('plugins.kind')"}
+use {'folke/lsp-trouble.nvim', config = "require('plugins.trouble')"}
 
 -- Autocompletion nvim-cmp
 use {
@@ -103,7 +104,7 @@ use {'JoosepAlviste/nvim-ts-context-commentstring', after = 'nvim-treesitter'}
 use {'mg979/vim-visual-multi'}
 use {'szw/vim-maximizer'}
 use {'nacro90/numb.nvim', config = "require('plugins.numb')"}
-use {'folke/todo-comments.nvim'}
+use {'folke/todo-comments.nvim', config = "require('plugins.todocomments')"}
 use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', 'arkav/lualine-lsp-progress'}}
 use {'romgrk/barbar.nvim', config = "require('plugins.bar')"}
 use {'folke/twilight.nvim', config = function() require("twilight").setup {} end}
@@ -114,7 +115,6 @@ use {'folke/which-key.nvim', config = "require('plugins.whichkey')", event = "Bu
 -- LSP
 --use {'tami5/lspsaga.nvim', config = "require('plugins.saga')"}
 --use {'onsails/lspkind-nvim', config = "require('plugins.kind')"}
---use {'folke/lsp-trouble.nvim', config = "require('plugins.trouble')"}
 --use {'nvim-lua/popup.nvim'}
 --use {'jose-elias-alvarez/null-ls.nvim'}
 --use {'jose-elias-alvarez/nvim-lsp-ts-utils', after = {'nvim-treesitter'}}
