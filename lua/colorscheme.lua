@@ -1,7 +1,7 @@
 local nightfox = require('nightfox')
 
 nightfox.setup({
-	fox = "nordfox", -- change the colorscheme to use nordfox
+	fox = "nightfox", -- change the colorscheme to use nordfox
   transparent = true, -- Disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening :terminal
   styles = {
