@@ -30,7 +30,7 @@ require('telescope').setup {
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-        qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+        qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new, 
 
         mappings = {
             i = {
@@ -103,7 +103,7 @@ end
 
 M.edit_neovim = function()
   builtin.git_files {
-    cwd = "~/.config/nvim",
+    cwd = "~/.dotfiles/nvimRocks",
     prompt = "~ dotfiles ~",
     color_devicons   = true,
     sorting_strategy = "ascending",

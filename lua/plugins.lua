@@ -107,7 +107,7 @@ use {'folke/todo-comments.nvim'}
 use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', 'arkav/lualine-lsp-progress'}}
 use {'romgrk/barbar.nvim', config = "require('plugins.bar')"}
 use {'folke/twilight.nvim', config = function() require("twilight").setup {} end}
---use {'folke/which-key.nvim', config = "require('plugins.which-key')", event = "BufWinEnter"}
+use {'folke/which-key.nvim', config = "require('plugins.whichkey')", event = "BufWinEnter"}
 -- use {'glepnir/dashboard-nvim', config = "require('plugins.dashboard')"}
 
 
