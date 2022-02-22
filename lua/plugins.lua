@@ -58,6 +58,7 @@ use {'neovim/nvim-lspconfig'}
 use {'williamboman/nvim-lsp-installer', config = "require('lsp.installer')"}
 use {'onsails/lspkind-nvim', config = "require('plugins.kind')"}
 use {'folke/lsp-trouble.nvim', config = "require('plugins.trouble')"}
+use {'tami5/lspsaga.nvim', config = "require('plugins.saga')"}
 
 -- Autocompletion nvim-cmp
 use {
@@ -113,7 +114,6 @@ use {'folke/which-key.nvim', config = "require('plugins.whichkey')", event = "Bu
 
 
 -- LSP
---use {'tami5/lspsaga.nvim', config = "require('plugins.saga')"}
 --use {'onsails/lspkind-nvim', config = "require('plugins.kind')"}
 --use {'nvim-lua/popup.nvim'}
 --use {'jose-elias-alvarez/null-ls.nvim'}
