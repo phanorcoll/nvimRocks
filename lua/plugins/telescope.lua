@@ -1,6 +1,10 @@
 local actions    = require('telescope.actions')
 local previewers = require('telescope.previewers')
 local builtin    = require('telescope.builtin')
+require('telescope').load_extension('fzf')
+require('telescope').load_extension('projects')
+require("telescope").load_extension("emoji")
+
 require('telescope').setup {
     defaults = {
         vimgrep_arguments = {
@@ -30,7 +34,7 @@ require('telescope').setup {
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-        qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new, 
+        qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
         mappings = {
             i = {
@@ -56,9 +60,6 @@ require('telescope').setup {
     }
 }
 
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('projects')
-require("telescope").load_extension("emoji")
 
 require("telescope-emoji").setup({
   action = function(emoji)
