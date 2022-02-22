@@ -114,7 +114,6 @@ use {'folke/which-key.nvim', config = "require('plugins.whichkey')", event = "Bu
 
 
 -- LSP
---use {'onsails/lspkind-nvim', config = "require('plugins.kind')"}
 --use {'nvim-lua/popup.nvim'}
 --use {'jose-elias-alvarez/null-ls.nvim'}
 --use {'jose-elias-alvarez/nvim-lsp-ts-utils', after = {'nvim-treesitter'}}
