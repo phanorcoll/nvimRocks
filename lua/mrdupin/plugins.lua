@@ -43,14 +43,25 @@ packer.init {
 return packer.startup(function(use)
   -- List of plugins here
   -- needed for other plugins
-  use "wbthomason/packer.nvim"        -- Have packer manage itself
-  use "nvim-lua/popup.nvim"           -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"         -- Useful lua functions used by lots of plugins
+  use "wbthomason/packer.nvim"                                                       -- Have packer manage itself
+  use "nvim-lua/popup.nvim"                                                          -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"                                                        -- Useful lua functions used by lots of plugins
+
+  use {'rcarriga/nvim-notify'}                                                       -- Notifications manager 
 
   -- Theme
   use 'EdenEast/nightfox.nvim'
 
+  -- Autocompletion LSP cmp
+  use {'hrsh7th/nvim-cmp'}                                                           -- the completion plugin
+  use {'hrsh7th/cmp-buffer'}                                                         -- buffer completion
+  use {'hrsh7th/cmp-path'}                                                           -- path completion
+  use {'hrsh7th/cmp-cmdline'}                                                        -- cmdline completion
+  use {'saadparwaiz1/cmp_luasnip'}                                                   -- snippet completion
 
+  -- snippets
+  use {'L3MON4D3/LuaSnip'}                                                            -- snippet engine
+  use {'rafamadriz/friendly-snippets'}                                                -- set of snippets for different languages
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- This goes at the end after all plugins
