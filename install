@@ -41,7 +41,7 @@ echo ''
 #echo ''
 
 
-info 'open nvim and run :PackerInstall to install plugins'
+#info 'open nvim and run :PackerInstall to install plugins'
 info 'open nvim and run :checkhealth for more info on extra dependencies'
 echo ''
 success 'Congratulations!! now run nvim and enjoy'
