@@ -86,6 +86,10 @@ return packer.startup(function(use)
   use {'p00f/nvim-ts-rainbow'}
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+  -- Git
+  use {'lewis6991/gitsigns.nvim', config = "require('mrdupin.gitsigns')"}
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- This goes at the end after all plugins
