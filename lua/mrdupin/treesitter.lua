@@ -26,6 +26,10 @@ configs.setup {
     enable_autocmd = false,
   },
 
+  autopairs = {
+    enable = true,
+  },
+
   textobjects = {
     move = {
       enable = true,
