@@ -49,3 +49,10 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+
+-- Breaking a bad habit
+keymap('n', '<Up>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
+keymap('n', '<Down>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
+keymap('n', '<Left>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
+keymap('n', '<Right>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
