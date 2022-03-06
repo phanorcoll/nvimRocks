@@ -49,13 +49,14 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"                                                          -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"                                                        -- Useful lua functions used by lots of plugins
 
-  use {'rcarriga/nvim-notify'}                                                       -- Notifications manager 
+  use {'rcarriga/nvim-notify'}                                                       -- Notifications manager
 
   -- Theme
   use 'EdenEast/nightfox.nvim'
 
   -- General
-  use {"windwp/nvim-autopairs", config = "require('mrdupin.autopairs')"}                                                        -- Autopairs, integrates with both cmp and treesitter
+  use {"windwp/nvim-autopairs", config = "require('mrdupin.autopairs')"}             -- Autopairs, integrates with both cmp and treesitter
+  use {'tpope/vim-commentary'}                                                       -- Easily comment code
 
   -- Autocompletion LSP cmp
   use {'hrsh7th/nvim-cmp'}                                                           -- the completion plugin
@@ -83,6 +84,8 @@ return packer.startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', config = "require('mrdupin.treesitter')", run = ':TSUpdate'}
   use {'nvim-treesitter/nvim-treesitter-textobjects', after = {'nvim-treesitter'}}
   use {'p00f/nvim-ts-rainbow'}
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- This goes at the end after all plugins
