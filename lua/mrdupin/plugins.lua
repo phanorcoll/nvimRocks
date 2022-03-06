@@ -54,6 +54,9 @@ return packer.startup(function(use)
   -- Theme
   use 'EdenEast/nightfox.nvim'
 
+  -- General
+  use {"windwp/nvim-autopairs", config = "require('mrdupin.autopairs')"}                                                        -- Autopairs, integrates with both cmp and treesitter
+
   -- Autocompletion LSP cmp
   use {'hrsh7th/nvim-cmp'}                                                           -- the completion plugin
   use {'hrsh7th/cmp-buffer'}                                                         -- buffer completion
@@ -76,6 +79,10 @@ return packer.startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'ahmedkhalf/project.nvim', config = function() require('project_nvim').setup{} end}
 
+  -- Treesitter
+  use {'nvim-treesitter/nvim-treesitter', config = "require('mrdupin.treesitter')", run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter-textobjects', after = {'nvim-treesitter'}}
+  use {'p00f/nvim-ts-rainbow'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- This goes at the end after all plugins
