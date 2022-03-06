@@ -14,9 +14,10 @@ map("n", "<C-u>", "viwU<ESC>", opts)
 map("i", "<C-u>", "<ESC>viwUi", opts)
 
 local function nkeymap(key, command)
-  map('n', key, command, opts)
+    map('n', key, command, opts)
 end
 
+nkeymap('<leader>f', ':lua vim.lsp.buf.formatting()<CR>')
 nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
 nkeymap('gD', ":Lspsaga preview_definition<CR>")
 nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
@@ -36,10 +37,10 @@ vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_
 vim.api.nvim_set_keymap("n", "<leader>cl", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", { noremap = true, silent = true })
 
 -- Resize windows
-nkeymap('<s-j>','<cmd>resize -2<cr>')
-nkeymap('<s-k>','<cmd>resize +2<cr>')
-nkeymap('<s-h>','<cmd>vertical resize -2<cr>')
-nkeymap('<s-l>','<cmd>vertical resize +2<cr>')
+nkeymap('<s-j>', '<cmd>resize -2<cr>')
+nkeymap('<s-k>', '<cmd>resize +2<cr>')
+nkeymap('<s-h>', '<cmd>vertical resize -2<cr>')
+nkeymap('<s-l>', '<cmd>vertical resize +2<cr>')
 
 -- Buffers
 nkeymap("<Tab>", ":BufferNext<CR>")

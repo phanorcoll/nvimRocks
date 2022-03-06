@@ -10,7 +10,7 @@ require('plugins.cmp')
 
 --Lsp
 require('lsp.luaconf')
-
+-- require('lsp.tsserver')
 --
 -- Runs PackerCompiler whenever plugins.lua is updated
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
