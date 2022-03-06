@@ -71,6 +71,10 @@ return packer.startup(function(use)
   use {'neovim/nvim-lspconfig'}                                                      -- enable LSP
   use {'williamboman/nvim-lsp-installer'}                                            -- Language server installer
 
+  -- Telescope
+  use {'nvim-telescope/telescope.nvim', config = "require('mrdupin.telescope')"}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'ahmedkhalf/project.nvim', config = function() require('project_nvim').setup{} end}
 
 
   -- Automatically set up your configuration after cloning packer.nvim
