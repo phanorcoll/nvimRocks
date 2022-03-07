@@ -87,6 +87,8 @@ return packer.startup(function(use)
 		"folke/twilight.nvim",
 		config = "require('mrdupin.twilight')",
 	}) -- dims inactive portions of the code you're editing.
+	use({ "glepnir/dashboard-nvim", config = "require('mrdupin.dashboard')" })
+
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- set of snippets for different languages
