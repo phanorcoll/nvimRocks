@@ -79,7 +79,7 @@ keymap("n", "<Leader>pw", "<cmd>Telescope grep_string<CR><ESC>", opts) -- finds 
 keymap("n", "<Leader>h", "<cmd>TodoTelescope<CR>", opts) -- search for todo comments like TODO, HACK, BUG
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<S-e>", ":NvimTreeToggle<cr>", opts)
 
 -- Format
 keymap("n", "<leader>f", ":Format<cr>", opts)
