@@ -78,6 +78,11 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" }) --
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use({ "folke/todo-comments.nvim", config = "require('mrdupin.todo-comments')" }) -- highlight and search for todo comments like TODO, HACK, BUG
+	use({
+		"hoob3rt/lualine.nvim",
+		config = "require('mrdupin.lualine')",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	}) -- statusline written in Lua.
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
