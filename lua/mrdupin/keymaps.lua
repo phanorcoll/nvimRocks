@@ -76,7 +76,7 @@ keymap(
 )
 keymap("n", "<leader>/", '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
 keymap("n", "<Leader>pw", "<cmd>Telescope grep_string<CR><ESC>", opts) -- finds word in project
-keymap("n", "<Leader>h", "<cmd>TodoTelescope<CR>", opts) -- finds word in project
+keymap("n", "<Leader>h", "<cmd>TodoTelescope<CR>", opts) -- search for todo comments like TODO, HACK, BUG
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

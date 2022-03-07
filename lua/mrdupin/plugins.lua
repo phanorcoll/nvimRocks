@@ -61,7 +61,13 @@ return packer.startup(function(use)
 	})
 	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 	use({ "mg979/vim-visual-multi" }) -- visual multiselector
-
+	use({ "szw/vim-maximizer" }) -- Maximazes the active buffer
+	use({
+		"nacro90/numb.nvim",
+		config = function()
+			require("numb").setup({})
+		end,
+	}) -- peeks lines of the buffer in non-obtrusive way
 	-- Autocompletion LSP cmp
 	use({ "hrsh7th/nvim-cmp" }) -- the completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completion
@@ -71,6 +77,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- LSP completion
 	use({ "hrsh7th/cmp-nvim-lua" }) --
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use({ "folke/todo-comments.nvim", config = "require('mrdupin.todo-comments')" }) -- highlight and search for todo comments like TODO, HACK, BUG
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
