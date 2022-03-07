@@ -83,7 +83,10 @@ return packer.startup(function(use)
 		config = "require('mrdupin.lualine')",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	}) -- statusline written in Lua.
-
+	use({
+		"folke/twilight.nvim",
+		config = "require('mrdupin.twilight')",
+	}) -- dims inactive portions of the code you're editing.
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- set of snippets for different languages
