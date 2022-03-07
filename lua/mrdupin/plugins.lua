@@ -57,6 +57,8 @@ return packer.startup(function(use)
   -- General
   use {"windwp/nvim-autopairs", config = "require('mrdupin.autopairs')"}             -- Autopairs, integrates with both cmp and treesitter
   use {'tpope/vim-commentary'}                                                       -- Easily comment code
+  use {'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'}, config = "require('mrdupin.nvimtree')" }
+  use{'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons'}}
 
   -- Autocompletion LSP cmp
   use {'hrsh7th/nvim-cmp'}                                                           -- the completion plugin
@@ -66,6 +68,8 @@ return packer.startup(function(use)
   use {'saadparwaiz1/cmp_luasnip'}                                                   -- snippet completion
   use {'hrsh7th/cmp-nvim-lsp'}                                                       -- LSP completion
   use {'hrsh7th/cmp-nvim-lua'}                                                       --
+  use {'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp'}
+
 
   -- snippets
   use {'L3MON4D3/LuaSnip'}                                                           -- snippet engine
