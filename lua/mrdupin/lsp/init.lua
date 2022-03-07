@@ -6,3 +6,4 @@ end
 
 require("mrdupin.lsp.lsp-installer")
 require("mrdupin.lsp.handlers").setup()
+require("mrdupin.lsp.null-ls")

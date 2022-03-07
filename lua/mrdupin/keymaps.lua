@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -31,6 +31,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<Tab>", ":BufferNext<CR>", opts)
 keymap("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
 keymap("n", "<S-q>", ":BufferClose<CR>", opts)
+
 -- Insert Mode --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
@@ -52,27 +53,39 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-
 -- Save file by CTRL-S
 keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("i", "<C-s>", "<ESC> :w<CR>", opts)
 
 -- Telescope General
-keymap('n','<leader>pf', '<cmd>lua require("telescope.builtin").find_files({prompt_title="Searching for a file?"})<cr>', opts)
-keymap('n','<leader>ps', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
-keymap('n','<leader>pb', '<cmd>lua require("telescope.builtin").buffers({prompt_title="Open Files"})<cr>', opts)
-keymap('n','<leader>qf', '<cmd>lua require("telescope.builtin").quickfix({prompt_title="Fix the errors"})<cr>', opts)
-keymap('n','<leader>lf', '<cmd>lua require("telescope.builtin").loclist()<cr>', opts)
-keymap('n','<leader>of', '<cmd>lua require("telescope.builtin").oldfiles({prompt_title="Previous opened files"})<cr>', opts)
-keymap('n','<leader>/', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
+keymap(
+	"n",
+	"<leader>pf",
+	'<cmd>lua require("telescope.builtin").find_files({prompt_title="Searching for a file?"})<cr>',
+	opts
+)
+keymap("n", "<leader>ps", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
+keymap("n", "<leader>pb", '<cmd>lua require("telescope.builtin").buffers({prompt_title="Open Files"})<cr>', opts)
+keymap("n", "<leader>qf", '<cmd>lua require("telescope.builtin").quickfix({prompt_title="Fix the errors"})<cr>', opts)
+keymap("n", "<leader>lf", '<cmd>lua require("telescope.builtin").loclist()<cr>', opts)
+keymap(
+	"n",
+	"<leader>of",
+	'<cmd>lua require("telescope.builtin").oldfiles({prompt_title="Previous opened files"})<cr>',
+	opts
+)
+keymap("n", "<leader>/", '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
 keymap("n", "<Leader>pw", "<cmd>Telescope grep_string<CR><ESC>", opts) -- finds word in project
-keymap("n", "<Leader>h", '<cmd>TodoTelescope<CR>', opts) -- finds word in project
+keymap("n", "<Leader>h", "<cmd>TodoTelescope<CR>", opts) -- finds word in project
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
+-- Format
+keymap("n", "<leader>f", ":Format<cr>", opts)
+
 -- Breaking a bad habit
-keymap('n', '<Up>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
-keymap('n', '<Down>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
-keymap('n', '<Left>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
-keymap('n', '<Right>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
+keymap("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+keymap("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+keymap("n", "<Left>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+keymap("n", "<Right>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })

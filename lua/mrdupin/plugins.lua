@@ -78,6 +78,7 @@ return packer.startup(function(use)
   -- LSP
   use {'neovim/nvim-lspconfig'}                                                      -- enable LSP
   use {'williamboman/nvim-lsp-installer'}                                            -- Language server installer
+  use {'jose-elias-alvarez/null-ls.nvim'}
 
   -- Telescope
   use {'nvim-telescope/telescope.nvim', config = "require('mrdupin.telescope')"}
