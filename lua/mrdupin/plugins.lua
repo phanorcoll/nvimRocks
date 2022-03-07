@@ -88,6 +88,15 @@ return packer.startup(function(use)
 		config = "require('mrdupin.twilight')",
 	}) -- dims inactive portions of the code you're editing.
 	use({ "glepnir/dashboard-nvim", config = "require('mrdupin.dashboard')" })
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({})
+		end,
+		requires = "nvim-treesitter/nvim-treesitter",
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	}) -- Annotation Toolkit, helps with documentins functions, classes, types
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine

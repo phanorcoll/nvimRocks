@@ -16,6 +16,12 @@ if not snip_status_ok then
 	return
 end
 
+local neogen_status_ok, neogen = pcall(require, "neogen")
+if not neogen_status_ok then
+	vim.notify("neogen not found!!", "error")
+	return
+end
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -75,7 +81,9 @@ cmp.setup({
 		-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
+			if neogen.jumpable() then
+				neogen.jump_next()
+			elseif cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expandable() then
 				luasnip.expand()
@@ -91,7 +99,9 @@ cmp.setup({
 			"s",
 		}),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
+			if neogen.jumpable(true) then
+				neogen.jump_prev()
+			elseif cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
 				luasnip.jump(-1)
