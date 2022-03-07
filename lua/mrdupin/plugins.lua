@@ -105,6 +105,7 @@ return packer.startup(function(use)
 			require("project_nvim").setup({})
 		end,
 	})
+	use({ "folke/lsp-trouble.nvim", config = "require('mrdupin.trouble')" }) -- A pretty list for showing diagnostics
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", config = "require('mrdupin.treesitter')", run = ":TSUpdate" })
