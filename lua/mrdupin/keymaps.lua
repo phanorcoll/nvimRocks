@@ -92,6 +92,9 @@ keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 
+-- Neogen - annotation for func, class, types
+keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
+
 -- Breaking a bad habit
 keymap("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
 keymap("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
