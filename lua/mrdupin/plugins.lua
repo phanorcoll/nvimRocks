@@ -97,6 +97,7 @@ return packer.startup(function(use)
 		-- Uncomment next line if you want to follow only stable versions
 		-- tag = "*"
 	}) -- Annotation Toolkit, helps with documentins functions, classes, types
+	use({ "kdheepak/lazygit.nvim" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
