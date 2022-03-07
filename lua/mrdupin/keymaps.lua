@@ -17,8 +17,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 20<cr>", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -26,9 +24,13 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Buffers
+keymap("n", "<Tab>", ":BufferNext<CR>", opts)
+keymap("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
+keymap("n", "<S-q>", ":BufferClose<CR>", opts)
 -- Insert Mode --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
@@ -64,9 +66,10 @@ keymap('n','<leader>lf', '<cmd>lua require("telescope.builtin").loclist()<cr>', 
 keymap('n','<leader>of', '<cmd>lua require("telescope.builtin").oldfiles({prompt_title="Previous opened files"})<cr>', opts)
 keymap('n','<leader>/', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
 keymap("n", "<Leader>pw", "<cmd>Telescope grep_string<CR><ESC>", opts) -- finds word in project
---keymap("n", "<Leader>e", "<cmd>Telescope emoji<CR>", opts) -- finds word in project
 keymap("n", "<Leader>h", '<cmd>TodoTelescope<CR>', opts) -- finds word in project
 
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Breaking a bad habit
 keymap('n', '<Up>', [[:echoerr "Dont use arrow keys!!"<cr>]], {noremap = true})
