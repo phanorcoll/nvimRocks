@@ -129,6 +129,9 @@ return packer.startup(function(use)
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", config = "require('mrdupin.gitsigns')" })
 
+	-- Go
+	use("ray-x/go.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- This goes at the end after all plugins
 	if PACKER_BOOTSTRAP then
