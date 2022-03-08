@@ -98,6 +98,7 @@ return packer.startup(function(use)
 		-- tag = "*"
 	}) -- Annotation Toolkit, helps with documentins functions, classes, types
 	use({ "kdheepak/lazygit.nvim" })
+	use({ "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
