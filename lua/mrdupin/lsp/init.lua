@@ -12,3 +12,5 @@ lspconfig.gopls.setup({})
 require("mrdupin.lsp.settings.gopls")
 -- spectral
 lspconfig.spectral.setup({})
+-- Docker
+lspconfig.dockerls.setup({})
