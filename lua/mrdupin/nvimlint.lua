@@ -5,5 +5,5 @@ if not lint_status_ok then
 end
 
 lint.linters_by_ft = {
-	markdown = { "eslint", "markdownlint", "golangcilint" },
+	markdown = { "eslint", "markdownlint" },
 }
