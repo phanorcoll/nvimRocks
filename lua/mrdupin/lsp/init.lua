@@ -7,6 +7,8 @@ end
 require("mrdupin.lsp.lsp-installer")
 require("mrdupin.lsp.handlers").setup()
 require("mrdupin.lsp.null-ls")
--- TODO: move these two lines to gopls.lua
+-- TODO: move each lsp to its own lua file
 lspconfig.gopls.setup({})
 require("mrdupin.lsp.settings.gopls")
+-- spectral
+lspconfig.spectral.setup({})
