@@ -95,6 +95,9 @@ keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 -- Neogen - annotation for func, class, types
 keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
 
+-- Trouble list issues in code
+keymap("n", "<Leader>t", ":TroubleToggle<CR>", opts)
+
 -- Breaking a bad habit
 keymap("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
 keymap("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })

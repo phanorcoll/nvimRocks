@@ -10,6 +10,8 @@ telescope.load_extension("lazygit")
 
 local actions = require("telescope.actions")
 
+local trouble = require("trouble.providers.telescope")
+
 telescope.setup({
 	defaults = {
 		vimgrep_arguments = {
@@ -56,6 +58,7 @@ telescope.setup({
 				["<CR>"] = actions.select_default,
 				["<C-x>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
+				-- ["<C-t>"] = trouble.open_with_trouble,
 				["<C-t>"] = actions.select_tab,
 
 				["<C-u>"] = actions.preview_scrolling_up,
@@ -77,6 +80,7 @@ telescope.setup({
 				["<CR>"] = actions.select_default,
 				["<C-x>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
+				-- ["<C-t>"] = trouble.open_with_trouble,
 				["<C-t>"] = actions.select_tab,
 
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
