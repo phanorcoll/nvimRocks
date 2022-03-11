@@ -101,7 +101,7 @@ return packer.startup(function(use)
 	use({ "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()" })
 	use({ "lukas-reineke/indent-blankline.nvim", config = "require('mrdupin.indent')" }) -- adds indentation guides to all lines (including empty lines).
 	use({ "mfussenegger/nvim-lint", config = "require('mrdupin.nvimlint')" }) -- An asynchronous linter plugin for Neovim (>= 0.6.0) complementary to the built-in Language Server Protocol support.
-
+	use({ "iamcco/markdown-preview.nvim" }) -- Preview Markdown on browser
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- set of snippets for different languages
