@@ -2,6 +2,14 @@
 
 My personal configuration for Neovim
 
-Got any suggestions, better plugins, configurations, let me know [@phanor](https://twitter.com/phanor)
+## Feedback
+
+If you have any feedback, better plugins, configurations, please reach out at [@phanor](https://twitter.com/phanor)
+
+## TODO:
+
+[ ] Fix installation script
+
+[ ] Clenup TODOs in code
 
 **- Keep Moving Forward -**
