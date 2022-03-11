@@ -99,6 +99,7 @@ return packer.startup(function(use)
 	}) -- Annotation Toolkit, helps with documentins functions, classes, types
 	use({ "kdheepak/lazygit.nvim" })
 	use({ "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()" })
+	use({ "lukas-reineke/indent-blankline.nvim", config = "require('mrdupin.indent')" }) -- adds indentation guides to all lines (including empty lines).
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
