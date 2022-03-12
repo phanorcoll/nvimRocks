@@ -111,6 +111,7 @@ return packer.startup(function(use)
 	use({ "williamboman/nvim-lsp-installer" }) -- Language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "onsails/lspkind-nvim" })
+	use({ "glepnir/lspsaga.nvim" }) -- light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", config = "require('mrdupin.telescope')" })
