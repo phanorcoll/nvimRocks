@@ -85,7 +85,7 @@ keymap("n", "<S-e>", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>f", ":Format<cr>", opts)
 
 -- trouble
-keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
+keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
 keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
 keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
