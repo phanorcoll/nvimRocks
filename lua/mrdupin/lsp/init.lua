@@ -12,7 +12,5 @@ require("mrdupin.lsp.lspsaga")
 -- TODO: move each lsp to its own lua file
 lspconfig.gopls.setup({})
 require("mrdupin.lsp.settings.gopls")
--- spectral
-lspconfig.spectral.setup({})
 -- Docker
 lspconfig.dockerls.setup({})
