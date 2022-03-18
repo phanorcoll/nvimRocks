@@ -6,8 +6,7 @@ end
 
 require("mrdupin.lsp.lsp-installer")
 require("mrdupin.lsp.handlers").setup()
-require("mrdupin.lsp.null-ls")
-require("mrdupin.lsp.lspsaga")
+-- require("mrdupin.lsp.null-ls")
 
 -- TODO: move each lsp to its own lua file
 lspconfig.gopls.setup({})
