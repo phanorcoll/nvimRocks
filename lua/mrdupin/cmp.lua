@@ -141,6 +141,7 @@ cmp.setup({
 		{ name = "cmp_tabnine", max_item_count = 3 },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "npm", keyword_length = 4 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

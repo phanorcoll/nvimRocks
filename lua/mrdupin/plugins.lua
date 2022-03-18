@@ -78,6 +78,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" }) --
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use({ "folke/todo-comments.nvim", config = "require('mrdupin.todo-comments')" }) -- highlight and search for todo comments like TODO, HACK, BUG
+	use({ "David-Kunz/cmp-npm", after = 'cmp-tabnine', config = "require('mrdupin.cmp-npm')" }) --
 	use({
 		"hoob3rt/lualine.nvim",
 		config = "require('mrdupin.lualine')",
