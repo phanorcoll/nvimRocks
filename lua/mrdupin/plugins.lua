@@ -41,15 +41,16 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- List of plugins here
-  -- needed for other plugins
-  use({"lewis6991/impatient.nvim",
-    config = function()
-      require('impatient')
-    end,
-  }) -- Speed up loading Lua modules in Neovim to improve startup time.
+	-- needed for other plugins
+	use({
+		"lewis6991/impatient.nvim",
+		config = function()
+			require("impatient")
+		end,
+	}) -- Speed up loading Lua modules in Neovim to improve startup time.
 	use("nathom/filetype.nvim") -- speed up your neovim startup time
-  use("wbthomason/packer.nvim") -- Have packer manage itself
-  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
 	use({ "rcarriga/nvim-notify" }) -- Notifications manager
@@ -84,7 +85,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" }) --
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use({ "folke/todo-comments.nvim", config = "require('mrdupin.todo-comments')" }) -- highlight and search for todo comments like TODO, HACK, BUG
-	use({ "David-Kunz/cmp-npm", after = 'cmp-tabnine', config = "require('mrdupin.cmp-npm')" }) --
+	use({ "David-Kunz/cmp-npm", after = "cmp-tabnine", config = "require('mrdupin.cmp-npm')" }) --
 	use({
 		"hoob3rt/lualine.nvim",
 		config = "require('mrdupin.lualine')",
@@ -108,12 +109,12 @@ return packer.startup(function(use)
 	use({ "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()" })
 	use({ "lukas-reineke/indent-blankline.nvim", config = "require('mrdupin.indent')" }) -- adds indentation guides to all lines (including empty lines).
 	use({ "mfussenegger/nvim-lint", config = "require('mrdupin.nvimlint')" }) -- An asynchronous linter plugin for Neovim (>= 0.6.0) complementary to the built-in Language Server Protocol support.
-  use({ "iamcco/markdown-preview.nvim" }) -- Preview Markdown on browser
-  use({
-    "vuki656/package-info.nvim",
-    requires = "MunifTanjim/nui.nvim",
-    config = "require('mrdupin.package-info')"
-  })
+	use({ "iamcco/markdown-preview.nvim" }) -- Preview Markdown on browser
+	use({
+		"vuki656/package-info.nvim",
+		requires = "MunifTanjim/nui.nvim",
+		config = "require('mrdupin.package-info')",
+	})
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
@@ -123,9 +124,9 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- Language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim" })
-  use({ "onsails/lspkind-nvim" })
-  use({ "stevearc/dressing.nvim", requires = 'MunifTanjim/nui.nvim', config = "require('mrdupin.dressing')" })
-  use({ "jose-elias-alvarez/nvim-lsp-ts-utils", after = {"nvim-treesitter"} })
+	use({ "onsails/lspkind-nvim" })
+	use({ "stevearc/dressing.nvim", requires = "MunifTanjim/nui.nvim", config = "require('mrdupin.dressing')" })
+	use({ "jose-elias-alvarez/nvim-lsp-ts-utils", after = { "nvim-treesitter" } })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", config = "require('mrdupin.telescope')" })
