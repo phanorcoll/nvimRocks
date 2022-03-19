@@ -41,9 +41,14 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- List of plugins here
-	-- needed for other plugins
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+  -- needed for other plugins
+  use({"lewis6991/impatient.nvim",
+    config = function()
+      require('impatient')
+    end,
+  }) -- Speed up loading Lua modules in Neovim to improve startup time.
+  use("wbthomason/packer.nvim") -- Have packer manage itself
+  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
 	use({ "rcarriga/nvim-notify" }) -- Notifications manager
