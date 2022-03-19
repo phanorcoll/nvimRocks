@@ -60,9 +60,9 @@ local function lsp_highlight_document(client)
 end
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
-    })
+	vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+		silent = true,
+	})
 end
 
 local function lsp_keymaps(bufnr)
@@ -81,27 +81,31 @@ local function lsp_keymaps(bufnr)
 	buf_map(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting(nil, 2000)<CR>", opts)
 	buf_map(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	buf_map(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	buf_map(
-		bufnr,
-		"n",
-		"gl",
-		'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
-		opts
-	)
+	buf_map(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
 	buf_map(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting(nil, 2000)' ]])
 end
 
 M.on_attach = function(client, bufnr)
-  -- setup tsserver with nvim-lsp-ts-utils
+	-- setup tsserver with nvim-lsp-ts-utils
+	-- tsserver based keymakings
 	if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-    local ts_utils = require("nvim-lsp-ts-utils")
-    ts_utils.setup({})
-    ts_utils.setup_client(client)
-    buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-    buf_map(bufnr, "n", "gf", ":TSLspRenameFile<CR>")
-    buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+		client.resolved_capabilities.document_formatting = false
+		local ts_utils = require("nvim-lsp-ts-utils")
+		ts_utils.setup({})
+		ts_utils.setup_client(client)
+		buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
+		buf_map(bufnr, "n", "gf", ":TSLspRenameFile<CR>")
+		buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+	end
+	-- Go based keymappings using ray-x/go.nvim
+	-- TODO: add more keymappings
+	if client.name == "gopls" then
+		print("from handlers GOPLS")
+		buf_map(bufnr, "n", "gc", ":GoCmt<CR>") -- add comments to func, struct
+		buf_map(bufnr, "n", "at", ":GoAddTag<CR>") -- add tags to struct
+		buf_map(bufnr, "n", "rt", ":GoRmTag<CR>") -- remove tags from struct
+		buf_map(bufnr, "n", "gt", ":GoTest<CR>") -- runs Go test
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
