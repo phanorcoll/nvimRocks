@@ -111,7 +111,8 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- Language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim" })
-	use({ "onsails/lspkind-nvim" })
+  use({ "onsails/lspkind-nvim" })
+  use({ "stevearc/dressing.nvim", requires = 'MunifTanjim/nui.nvim', config = "require('mrdupin.dressing')" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", config = "require('mrdupin.telescope')" })
