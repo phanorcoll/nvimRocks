@@ -1,5 +1,4 @@
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-local inspect = require("vim.inspect")
 if not status_ok then
 	vim.notify("nvim-lsp-installer found!!", "error")
 	return
