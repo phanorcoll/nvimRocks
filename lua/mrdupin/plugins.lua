@@ -133,7 +133,8 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", config = "require('mrdupin.gitsigns')" })
+	use({ "lewis6991/gitsigns.nvim", config = "require('mrdupin.gitsigns')", event = "BufRead" })
+	use({ "sindrets/diffview.nvim" })
 
 	-- Go
 	use("ray-x/go.nvim")
