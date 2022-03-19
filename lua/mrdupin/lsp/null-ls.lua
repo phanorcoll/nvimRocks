@@ -7,15 +7,19 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
+local code_action = null_ls.builtins.code_actions
 
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		-- formatting.prettier,
+    diagnostics.eslint,
+    code_action.eslint,
+		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier,
 		formatting.stylua,
 	},
+  -- on_attach = on_attach
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
