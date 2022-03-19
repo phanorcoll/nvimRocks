@@ -113,6 +113,7 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim" })
   use({ "onsails/lspkind-nvim" })
   use({ "stevearc/dressing.nvim", requires = 'MunifTanjim/nui.nvim', config = "require('mrdupin.dressing')" })
+  use({ "jose-elias-alvarez/nvim-lsp-ts-utils", after = {"nvim-treesitter"} })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", config = "require('mrdupin.telescope')" })
