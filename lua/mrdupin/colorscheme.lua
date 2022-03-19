@@ -6,7 +6,7 @@ if not status_ok then
   return
 end
 
-nightfox. setup({
+nightfox.setup({
   options = {
     terminal_colors = true, -- Configure the colors used when opening :terminal
     transparent = true, -- Disable setting the background color
