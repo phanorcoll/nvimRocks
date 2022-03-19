@@ -6,6 +6,7 @@ end
 
 -- INFO: npm packages for tsserver and null-ls
 -- npm install -g typescript typescript-language-server eslint prettier
+-- to use eslint_d -> npm install -g eslint_d
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
@@ -16,13 +17,13 @@ local code_action = null_ls.builtins.code_actions
 null_ls.setup({
 	debug = false,
 	sources = {
-    diagnostics.eslint,
-    code_action.eslint,
+		diagnostics.eslint_d,
+		code_action.eslint_d,
 		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.prettier,
 		formatting.stylua,
 	},
-  -- on_attach = on_attach
+	-- on_attach = on_attach
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
