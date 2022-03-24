@@ -152,6 +152,9 @@ return packer.startup(function(use)
 	-- Go
 	use("ray-x/go.nvim")
 
+  -- Terreform
+  use("hashivim/vim-terraform")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- This goes at the end after all plugins
 	if PACKER_BOOTSTRAP then
