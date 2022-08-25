@@ -11,5 +11,8 @@ require("mrdupin.lsp.settings.gopls")
 -- Docker
 lspconfig.dockerls.setup({})
 
-lspconfig.terraformls.setup{}
-lspconfig.tflint.setup{}
+lspconfig.terraformls.setup({})
+lspconfig.tflint.setup({})
+
+-- solidity
+lspconfig.solidity_ls.setup({})

@@ -142,6 +142,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "npm", keyword_length = 4 },
+		{ name = "solidity_ls" },
 		{ name = "terraformls" },
 	},
 	confirm_opts = {
