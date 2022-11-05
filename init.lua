@@ -9,4 +9,3 @@
 --TODO: set key mappings
 --TODO: set productivity plugins
 require("mrdupin")
-print("Hello from main init.lua")
