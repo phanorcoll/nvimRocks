@@ -50,4 +50,9 @@ return packer.startup(function(use)
   },
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
 }
+
+-- Theme
+	use("EdenEast/nightfox.nvim")
+
+  use({ "rcarriga/nvim-notify" }) -- Notifications manager
 end)
