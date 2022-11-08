@@ -60,9 +60,10 @@ return packer.startup(function(use)
 
   -- Telescope
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } },
-    config = "require('mrdupin.telescope)",
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
+    requires = 'nvim-lua/plenary.nvim',
+    config = "require('mrdupin.telescope')",
   }
   use { 'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -114,7 +115,9 @@ return packer.startup(function(use)
   use({ "windwp/nvim-autopairs", config = "require('mrdupin.autopairs')" }) -- Autopairs, integrates with both cmp and treesitter
   use({ "tpope/vim-commentary" }) -- Easily comment code
   use("JoosepAlviste/nvim-ts-context-commentstring")
-  use({ "folke/lsp-trouble.nvim" }) -- A pretty list for showing diagnostics
-  use({ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end }) -- highlight and search for todo comments like TODO, HACK, BUG
+  use({ "folke/lsp-trouble.nvim", config = "require('mrdupin.trouble')" }) -- A pretty list for showing diagnostics
+  use({ "folke/todo-comments.nvim", config = "require('mrdupin.todo-comments')" }) -- highlight and search for todo comments like TODO, HACK, BUG
+
+  use({ "j-hui/fidget.nvim" }) -- Standalone UI for nvim-lsp progress
 
 end)

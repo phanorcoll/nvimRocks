@@ -5,8 +5,6 @@ if not status_ok then
 end
 
 telescope.load_extension("fzf")
-telescope.load_extension("projects")
-telescope.load_extension("lazygit")
 
 local actions = require("telescope.actions")
 
@@ -14,34 +12,6 @@ local trouble = require("trouble.providers.telescope")
 
 telescope.setup({
   defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-    },
-    layout_config = {
-      horizontal = {
-        mirror = false,
-      },
-      vertical = {
-        mirror = false,
-      },
-      prompt_position = "bottom",
-    },
-    file_sorter = telescope.get_fzy_sorter,
-    prompt_prefix = " ",
-    selection_caret = "=>",
-    path_display = { "smart" },
-    layout_strategy = "horizontal",
-    color_devicons = true,
-    sorting_strategy = "ascending",
-    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-    qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -131,10 +101,3 @@ telescope.setup({
     -- please take a look at the readme of the extension you want to configure
   },
 })
-
-vim.cmd([[
-  augroup telescope_lazygit_config
-    autocmd!
-    autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
-  augroup end
-]])
