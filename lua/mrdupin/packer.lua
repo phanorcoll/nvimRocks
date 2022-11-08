@@ -100,5 +100,9 @@ return packer.startup(function(use)
   use({ "David-Kunz/cmp-npm", config = "require('mrdupin.cmp-npm')" })
 
   use("ray-x/go.nvim")
+  use({ "p00f/nvim-ts-rainbow" })
+  use({ "windwp/nvim-autopairs", config = "require('mrdupin.autopairs')" }) -- Autopairs, integrates with both cmp and treesitter
+  use({ "tpope/vim-commentary" }) -- Easily comment code
+  use("JoosepAlviste/nvim-ts-context-commentstring")
 
 end)
