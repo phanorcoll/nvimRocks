@@ -55,7 +55,26 @@ keymap("n", "<S-e>", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
 
 
-
+-- Telescope General
+keymap(
+  "n",
+  "<leader>pf",
+  '<cmd>lua require("telescope.builtin").find_files({prompt_title="Searching for a file?"})<cr>',
+  opts
+)
+keymap("n", "<leader>ps", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
+keymap("n", "<leader>pb", '<cmd>lua require("telescope.builtin").buffers({prompt_title="Open Files"})<cr>', opts)
+keymap("n", "<leader>qf", '<cmd>lua require("telescope.builtin").quickfix({prompt_title="Fix the errors"})<cr>', opts)
+keymap("n", "<leader>lf", '<cmd>lua require("telescope.builtin").loclist()<cr>', opts)
+keymap(
+  "n",
+  "<leader>of",
+  '<cmd>lua require("telescope.builtin").oldfiles({prompt_title="Previous opened files"})<cr>',
+  opts
+)
+keymap("n", "<leader>/", '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
+keymap("n", "<Leader>pw", "<cmd>Telescope grep_string<CR><ESC>", opts) -- finds word in project
+keymap("n", "<Leader>h", "<cmd>TodoTelescope<CR>", opts) -- search for todo comments like TODO, HACK, BUG
 
 
 -- Breaking a bad habit

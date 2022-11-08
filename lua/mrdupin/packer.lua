@@ -43,6 +43,7 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
+
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", config = "require('mrdupin.treesitter')", run = ":TSUpdate" })
   use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
@@ -56,6 +57,15 @@ return packer.startup(function(use)
   }
 
   use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugin
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    config = "require('mrdupin.telescope)",
+  }
+  use { 'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
   -- statusline written in Lua.
   use({
@@ -104,5 +114,7 @@ return packer.startup(function(use)
   use({ "windwp/nvim-autopairs", config = "require('mrdupin.autopairs')" }) -- Autopairs, integrates with both cmp and treesitter
   use({ "tpope/vim-commentary" }) -- Easily comment code
   use("JoosepAlviste/nvim-ts-context-commentstring")
+  use({ "folke/lsp-trouble.nvim" }) -- A pretty list for showing diagnostics
+  use({ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end }) -- highlight and search for todo comments like TODO, HACK, BUG
 
 end)
