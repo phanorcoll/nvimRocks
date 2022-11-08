@@ -53,3 +53,13 @@ keymap("n", "<S-e>", ":NvimTreeToggle<cr>", opts)
 
 -- Neogen generate doc
 keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
+
+
+
+
+
+-- Breaking a bad habit
+keymap("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+keymap("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+keymap("n", "<Left>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+keymap("n", "<Right>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
