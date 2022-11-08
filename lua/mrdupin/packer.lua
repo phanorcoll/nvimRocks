@@ -43,6 +43,10 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
+  -- Treesitter
+  use({ "nvim-treesitter/nvim-treesitter", config = "require('mrdupin.treesitter')", run = ":TSUpdate" })
+  use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
+
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -94,5 +98,7 @@ return packer.startup(function(use)
     "hrsh7th/cmp-nvim-lua",
   })
   use({ "David-Kunz/cmp-npm", config = "require('mrdupin.cmp-npm')" })
+
+  use("ray-x/go.nvim")
 
 end)

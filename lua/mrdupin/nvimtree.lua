@@ -14,9 +14,9 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 -- empty setup using defaults
 nvim_tree.setup({
-view = {
-side = "right",
-mappings = {
+  view = {
+    side = "right",
+    mappings = {
       custom_only = false,
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
@@ -24,26 +24,26 @@ mappings = {
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
-},
-ignore_ft_on_setup = {
+  },
+  ignore_ft_on_setup = {
     "startify",
     "dashboard",
     "alpha",
   },
-notify = {
-        threshold = vim.log.levels.INFO,
+  notify = {
+    threshold = vim.log.levels.INFO,
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          buftype = { "nofile", "terminal", "help" },
+        },
       },
-actions ={
-open_file = {
-quit_on_open =true,
-window_picker = {
-            enable = true,
-            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-            exclude = {
-              filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-              buftype = { "nofile", "terminal", "help" },
-            },
-          },
-}
-}
+    }
+  }
 })

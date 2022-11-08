@@ -2,7 +2,7 @@
 require("mason").setup {}
 --require("mason-lspconfig").setup{}
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua" }
+  ensure_installed = { "sumneko_lua", "gopls" }
 })
 
 -- Mappings.
@@ -45,4 +45,28 @@ end
 require("lspconfig").sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  vim.api.nvim_exec([[ autocmd BufWritePre *.lua :silent! lua vim.lsp.buf.format() ]], false)
+}
+
+
+require("go").setup()
+require("lspconfig").gopls.setup {
+  cmd = { 'gopls' },
+  settings = {
+    gopls = {
+      analyses = {
+        nilness = true,
+        unusedparams = true,
+        unusedwrite = true,
+        useany = true,
+      },
+      experimentalPostfixCompletions = true,
+      gofumpt = true,
+      staticcheck = true,
+      usePlaceholders = true,
+    },
+  },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 }
