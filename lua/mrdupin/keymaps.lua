@@ -49,3 +49,7 @@ keymap("i", "<C-s>", "<ESC> :w<CR>", opts)
 
 -- Nvimtree
 keymap("n", "<S-e>", ":NvimTreeToggle<cr>", opts)
+
+
+-- Neogen generate doc
+keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
