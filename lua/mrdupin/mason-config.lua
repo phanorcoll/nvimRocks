@@ -2,7 +2,8 @@
 require("mason").setup {}
 --require("mason-lspconfig").setup{}
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "gopls" }
+  ensure_installed = { "cssls", "dockerls", "eslint", "html", "jsonls", "tsserver", "remark_ls", "rust_analyzer",
+    "solang", "sumneko_lua", "svelte", "tailwindcss", "terraformls", "yamlls", "gopls" }
 })
 
 -- Mappings.
