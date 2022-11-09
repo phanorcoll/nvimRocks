@@ -27,8 +27,8 @@ require("luasnip/loaders/from_vscode").lazy_load()
 cmp.setup({
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
-    end,
+      require 'luasnip'.lsp_expand(args.body)
+    end
   },
   window = {
     completion = cmp.config.window.bordered(),
@@ -45,8 +45,6 @@ cmp.setup({
         neogen.jump_next()
       elseif cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expandable() then
-        luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       else

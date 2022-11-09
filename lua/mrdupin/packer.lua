@@ -96,12 +96,12 @@ return packer.startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter",
   }
 
-  -- snippet engine
-  use({ "L3MON4D3/LuaSnip" })
 
+  -- snippet engine
+  use({ "hrsh7th/nvim-cmp" }) -- the completion plugin
+  use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", config = function() require('mrdupin.snippets') end })
   -- completion
   use({
-    "hrsh7th/nvim-cmp", -- the completion plugin
     "hrsh7th/cmp-buffer", -- buffer completion
     "hrsh7th/cmp-cmdline", -- cmdline completion
     "saadparwaiz1/cmp_luasnip", -- snippet completion
@@ -109,6 +109,7 @@ return packer.startup(function(use)
     "hrsh7th/cmp-nvim-lua",
   })
   use({ "David-Kunz/cmp-npm", config = "require('mrdupin.cmp-npm')" })
+
 
   use("ray-x/go.nvim")
   use({ "p00f/nvim-ts-rainbow" })
