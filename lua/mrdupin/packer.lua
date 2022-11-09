@@ -100,6 +100,7 @@ return packer.startup(function(use)
   -- snippet engine
   use({ "hrsh7th/nvim-cmp" }) -- the completion plugin
   use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", config = function() require('mrdupin.snippets') end })
+  use({ "rafamadriz/friendly-snippets" })
   -- completion
   use({
     "hrsh7th/cmp-buffer", -- buffer completion
