@@ -1,3 +1,4 @@
+-- INFO: Doc https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 -- TODO: cleanup this file
 -- TODO: improve snippets for Go, add comments to packages, func, types, following https://go.dev/blog/godoc
 --
