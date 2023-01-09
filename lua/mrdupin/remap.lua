@@ -24,6 +24,9 @@ vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 --format
 vim.keymap.set("n","<leadeer>f", function() vim.lsp.bug.format() end)
 
+-- makes a bash file executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
+
 
 -- Breaking a bad habit
 vim.keymap.set("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
