@@ -41,5 +41,8 @@ packer.init({
 
 return packer.startup(function(use)
 	-- Packere can manage itself
-	use 'wbthomason/packer.nvim'
+	use("nathom/filetype.nvim") -- speed up your neovim startup time
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 end)
