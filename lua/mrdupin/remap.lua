@@ -21,6 +21,9 @@ vim.keymap.set("i", "<C-s>", "<ESC> :w<CR>", opts)
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 
+--format
+vim.keymap.set("n","<leadeer>f", function() vim.lsp.bug.format() end)
+
 
 -- Breaking a bad habit
 vim.keymap.set("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
