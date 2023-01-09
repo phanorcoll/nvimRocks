@@ -3,3 +3,4 @@
 --TODO: set productivity plugins
 --TODO: setup tabnine https://www.tabnine.com/
 require("mrdupin")
+print("hello from main init.lua")
