@@ -1,4 +1,5 @@
 require("mrdupin.packer")
 require("mrdupin.remap")
+require("mrdupin.options")
 require("mrdupin.colorscheme")
 print("hello from mrdupin")
