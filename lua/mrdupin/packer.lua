@@ -89,4 +89,12 @@ return packer.startup(function(use)
 		}
 	}
 
+    use({ "rcarriga/nvim-notify" }) -- Notifications manager
+
+    -- autopairs for multiple characters
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
 end)
