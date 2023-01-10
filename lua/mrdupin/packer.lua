@@ -100,4 +100,10 @@ return packer.startup(function(use)
     -- Easily comment code
     use({ "tpope/vim-commentary" })
 
+    -- highlight and search todo commentes like TODO, HACK, BUG
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim"
+    }
+
 end)
