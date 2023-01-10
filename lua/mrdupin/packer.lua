@@ -97,4 +97,7 @@ return packer.startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- Easily comment code
+    use({ "tpope/vim-commentary" })
+
 end)
