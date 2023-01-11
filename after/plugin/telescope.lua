@@ -1,5 +1,3 @@
-print("hello from after - telescope")
---local builtin = require('telescope.builtin')
 local status_ok, builtin = pcall(require, "telescope.builtin")
 if not status_ok then
 	vim.notify("telescope.builtin not found!!", "error")
