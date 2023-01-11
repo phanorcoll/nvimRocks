@@ -149,4 +149,10 @@ return packer.startup(function(use)
     -- lazygit implementation
     use('kdheepak/lazygit.nvim')
 
+    -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
 end)

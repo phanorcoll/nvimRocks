@@ -1,3 +1,5 @@
+![Neovim](https://cdn.svgporn.com/logos/neovim.svg) 
+
 ## (Neo)vim Rocks
 
 My personal configuration for Neovim
@@ -8,8 +10,6 @@ If you have any feedback, better plugins, configurations, please reach out at [@
 
 ## TODO:
 
-[ ] Fix installation script
+[ ] Create installation script
 
-[ ] Clenup TODOs in code
-
-**- Keep Moving Forward -**
+**- Keep Moving Forward 🚀 -**
