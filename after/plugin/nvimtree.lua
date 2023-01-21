@@ -32,6 +32,6 @@ require("nvim-tree").setup({
         highlight_opened_files = "all",
     },
     filters = {
-        dotfiles = true,
+        dotfiles = false,
     },
 })
