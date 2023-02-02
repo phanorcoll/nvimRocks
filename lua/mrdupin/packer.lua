@@ -158,4 +158,15 @@ return packer.startup(function(use)
   -- tabline plugin
   use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' }
 
+  -- https://github.com/ray-x/navigator.lua
+  use({
+    'ray-x/navigator.lua',
+    requires = {
+      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+      { 'neovim/nvim-lspconfig' },
+    },
+  })
+
+  use 'ray-x/go.nvim'
+
 end)

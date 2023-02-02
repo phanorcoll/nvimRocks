@@ -31,7 +31,7 @@ lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
-lsp.skip_server_setup({'remark-language-server'})
+lsp.skip_server_setup({ 'remark-language-server' })
 
 -- key maps to load ONLY when a LSP is detected
 lsp.on_attach(function(client, bufnr)
@@ -50,3 +50,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require 'navigator'.setup()
