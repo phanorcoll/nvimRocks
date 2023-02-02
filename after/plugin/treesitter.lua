@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "help", "html", "json", "markdown", "svelte", "javascript", "typescript", "go", "gomod", "gowork", "lua", "rust", "bash", "css", "dockerfile", "gitcommit", "gitignore", "terraform", "yaml" },
+  ensure_installed = { "help", "html", "json", "markdown", "svelte", "javascript", "typescript", "go", "gomod", "gowork", "lua", "rust", "bash", "css", "dockerfile", "gitcommit", "gitignore", "terraform", "yaml", "vim" },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
