@@ -169,4 +169,13 @@ return packer.startup(function(use)
 
   use 'ray-x/go.nvim'
 
+  -- Flutter
+  use {
+    "akinsho/flutter-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
+
+  -- DAP (Debug Adapter Protocol)
+  use 'mfussenegger/nvim-dap'
+
 end)
