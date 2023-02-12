@@ -180,4 +180,10 @@ return packer.startup(function(use)
 
   use { 'earthly/earthly.vim', branch = "main" }
 
+  -- a plugin for interactive code reviews
+  use {
+    'ldelossa/gh.nvim',
+    requires = { { 'ldelossa/litee.nvim' } }
+  }
+
 end)
