@@ -178,4 +178,6 @@ return packer.startup(function(use)
   -- DAP (Debug Adapter Protocol)
   use 'mfussenegger/nvim-dap'
 
+  use { 'earthly/earthly.vim', branch = "main" }
+
 end)
