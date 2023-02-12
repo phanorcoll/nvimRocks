@@ -10,7 +10,6 @@ lsp.ensure_installed({
   'gopls',
   'html',
   'rust_analyzer',
-  'sumneko_lua',
   'svelte',
   'solidity',
   'tsserver',
