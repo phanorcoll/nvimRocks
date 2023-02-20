@@ -5,33 +5,33 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-        signcolumn = "yes",
-        adaptive_size = true,
-        mappings = {
-            list = {
-                { key = "u", action = "dir_up" },
-            },
-        },
-        float = {
-            enable = true,
-            quit_on_focus_loss = true,
-            open_win_config = {
-                relative = "editor",
-                border = "rounded",
-                width = 30,
-                height = 30,
-                row = 1,
-                col = 1,
-            },
-        },
+  sort_by = "case_sensitive",
+  view = {
+    signcolumn = "yes",
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
     },
-    renderer = {
-        group_empty = true,
-        highlight_opened_files = "all",
+    float = {
+      enable = false,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 30,
+        height = 30,
+        row = 1,
+        col = 1,
+      },
     },
-    filters = {
-        dotfiles = false,
-    },
+  },
+  renderer = {
+    group_empty = true,
+    highlight_opened_files = "name",
+  },
+  filters = {
+    dotfiles = false,
+  },
 })
