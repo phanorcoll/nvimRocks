@@ -186,4 +186,8 @@ return packer.startup(function(use)
     requires = { { 'ldelossa/litee.nvim' } }
   }
 
+  -- copilot
+  use { 'github/copilot.vim' }
+
+
 end)
