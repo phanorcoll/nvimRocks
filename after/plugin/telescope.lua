@@ -5,6 +5,7 @@ if not status_ok then
 end
 
 require("telescope").load_extension "flutter"
+require("telescope").load_extension "live_grep_args"
 
 -- key mappings
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {}) -- Search all files
@@ -16,3 +17,4 @@ vim.keymap.set('n', '<leader>ph',
 vim.keymap.set('n', '<leader>px', builtin.quickfix, {}) -- Search only repo files
 vim.keymap.set('n', '<leader>pw', builtin.grep_string, {}) -- Search for the word where cursor is
 vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {}) -- Search for the word where cursor is
+vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
