@@ -191,5 +191,8 @@ return packer.startup(function(use)
   -- copilot
   use { 'github/copilot.vim' }
 
+  --Gitblame
+  use { 'f-person/git-blame.nvim' }
+
 
 end)
