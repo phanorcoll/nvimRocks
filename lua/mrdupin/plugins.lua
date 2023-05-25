@@ -103,5 +103,14 @@ return require("packer").startup(function(use)
 
   use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
 
+  -- LSP diagnostics, code actions, and more via Lua.
+  use({
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+          require("mrdupin.configs.null-ls")
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
+  })
+
   
 end)
