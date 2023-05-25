@@ -25,9 +25,6 @@ nls.setup({
         -- Diagnostics
         dgn.eslint_d,
         dgn.shellcheck,
-        dgn.pylint.with({
-            method = nls.methods.DIAGNOSTICS_ON_SAVE,
-        }),
 
         -- Code Actions
         cda.eslint_d,
