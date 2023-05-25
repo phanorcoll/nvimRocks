@@ -48,5 +48,20 @@ return require("packer").startup(function(use)
       requires = { { "nvim-lua/plenary.nvim" } },
   })
 
+  -- LSP
+  use({
+      "neovim/nvim-lspconfig",
+      config = function()
+          require("mrdupin.configs.lsp")
+      end,
+  })
+
+  use("onsails/lspkind-nvim")
+  use({
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      tag = "v<CurrentMajor>.*",
+  })
+
   
 end)
