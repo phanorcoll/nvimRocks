@@ -57,8 +57,12 @@ map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
 
+-- Move text up and down
+map("x", "<A-k>", ":move '<-2<CR>gv-gv")
+map("x", "<A-j>", ":move '>+1<CR>gv-gv")
+
 -- Breaking a bad habit
-vim.keymap.set("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
-vim.keymap.set("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
-vim.keymap.set("n", "<Left>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
-vim.keymap.set("n", "<Right>", [[:echoerr "Dont use arrow keys!!"<cr>]], { noremap = true })
+map("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]])
+map("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]])
+map("n", "<Left>", [[:echoerr "Dont use arrow keys!!"<cr>]])
+map("n", "<Right>", [[:echoerr "Dont use arrow keys!!"<cr>]])
