@@ -112,5 +112,19 @@ return require("packer").startup(function(use)
       requires = { "nvim-lua/plenary.nvim" },
   })
 
-  
+  -- Mason: Portable package manager
+  use({
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+  })
+
+  use({
+      "williamboman/mason-lspconfig.nvim",
+      config = function()
+          require("mrdupin.configs.mason-lsp")
+      end,
+  })
+
 end)
