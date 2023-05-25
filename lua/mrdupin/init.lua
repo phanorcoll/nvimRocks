@@ -1,4 +1,3 @@
-print("🚀 start hacking! 🤟")
 require("mrdupin.options")
 require("mrdupin.plugins")
 require("mrdupin.remap")
@@ -11,3 +10,4 @@ if themeStatus then
 else
     return
 end
+
