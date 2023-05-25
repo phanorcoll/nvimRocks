@@ -1,6 +1,7 @@
 print("🚀 start hacking! 🤟")
 require("mrdupin.options")
 require("mrdupin.plugins")
+require("mrdupin.remap")
 
 -- colorscheme config: kanagawa
 local themeStatus, kanagawa = pcall(require, "kanagawa")
