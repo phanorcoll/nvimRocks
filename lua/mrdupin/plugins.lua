@@ -148,4 +148,38 @@ return require("packer").startup(function(use)
       end,
   })
 
+  -- Markdown Preview
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function()
+          vim.fn["mkdp#util#install"]()
+      end,
+  })
+
+  -- Auto pairs
+  use({
+      "windwp/nvim-autopairs",
+      config = function()
+          require("mrdupin.configs.autopairs")
+      end,
+  })
+
+  -- Background Transparent
+  use({
+      "xiyaowong/nvim-transparent",
+      config = function()
+          require("transparent").setup({
+              extra_groups = {
+                  "BufferLineTabClose",
+                  "BufferlineBufferSelected",
+                  "BufferLineFill",
+                  "BufferLineBackground",
+                  "BufferLineSeparator",
+                  "BufferLineIndicatorSelected",
+              },
+              exclude_groups = {},
+          })
+      end,
+  })
+
 end)
