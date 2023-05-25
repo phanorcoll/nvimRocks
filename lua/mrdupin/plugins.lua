@@ -112,21 +112,6 @@ return require("packer").startup(function(use)
       requires = { "nvim-lua/plenary.nvim" },
   })
 
-  -- Mason: Portable package manager
-  use({
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end,
-  })
-
-  use({
-      "williamboman/mason-lspconfig.nvim",
-      config = function()
-          require("mrdupin.configs.mason-lsp")
-      end,
-  })
-
   -- File manager
   use({
       "nvim-neo-tree/neo-tree.nvim",
@@ -143,6 +128,23 @@ return require("packer").startup(function(use)
       "norcalli/nvim-colorizer.lua",
       config = function()
           require("colorizer").setup({ "*" })
+      end,
+  })
+
+  -- Terminal
+  use({
+      "akinsho/toggleterm.nvim",
+      tag = "*",
+      config = function()
+          require("mrdupin.configs.toggleterm")
+      end,
+  })
+
+  -- Git
+  use({
+      "lewis6991/gitsigns.nvim",
+      config = function()
+          require("mrdupin.configs.gitsigns")
       end,
   })
 

@@ -36,3 +36,4 @@ o.hls = false -- When there is a previous search pattern, highlight all its matc
 o.incs = true -- While typing a search command, show where the pattern, as it was typed so far, matches.
 o.smartindent = true -- Do smart autoindenting when starting a new line.
 o.updatetime = 300 -- Number of milliseconds to wait in Insert mode after changing the text before |InsertIdle| is triggered.
+o.termguicolors = true
