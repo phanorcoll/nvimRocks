@@ -64,6 +64,9 @@ map("x", "<A-j>", ":move '>+1<CR>gv-gv")
 -- Todo Comments
 map("n", "<leader>cc", "<CMD>TodoTelescope<CR>")
 
+-- Trouble
+map("n", "<leader>tt", "<CMD>TroubleToggle<CR>")
+
 -- Breaking a bad habit
 map("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]])
 map("n", "<Down>", [[:echoerr "Dont use arrow keys!!"<cr>]])
