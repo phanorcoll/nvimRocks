@@ -1,5 +1,0 @@
-print("🚀 start hacking! 🤟")
-require("mrdupin.packer")
-require("mrdupin.remap")
-require("mrdupin.options")
-require("mrdupin.colorscheme")
