@@ -3,6 +3,8 @@ if not status then
     return
 end
 
+local util = require "lspconfig/util"
+
 local protocol = require("vim.lsp.protocol")
 
 local on_attach = function(client, bufnr)
@@ -47,6 +49,23 @@ nvim_lsp.cssls.setup({
 nvim_lsp.tailwindcss.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+})
+
+nvim_lsp.gopls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {"gopls"},
+    filetypes = {"go", "gomod", "gowor", "gotmpl"},
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        }
+      }
+    },
 })
 
 

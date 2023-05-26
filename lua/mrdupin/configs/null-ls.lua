@@ -12,15 +12,15 @@ local cda = nls.builtins.code_actions
 
 nls.setup({
     sources = {
-
         -- Formatting
-        fmt.prettierd,
+        -- fmt.prettierd,
         fmt.eslint_d,
         fmt.prettier.with({
             filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" },
         }),
-        fmt.stylua,
-        fmt.rustfmt,
+        fmt.gofumpt,
+        fmt.goimports,
+        fmt.golines,
 
         -- Diagnostics
         dgn.eslint_d,
@@ -37,7 +37,8 @@ nls.setup({
                 group = augroup,
                 buffer = bufnr,
                 callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
+                    print("Formatting...")
+                    vim.lsp.buf.format({ bufnr = bufnr, timeout = 2000 })
                 end,
             })
         end

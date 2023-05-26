@@ -13,5 +13,6 @@ masonlsp.setup({
         "jsonls",
         "tsserver",
         "tailwindcss",
+        "gopls",
     },
 })
