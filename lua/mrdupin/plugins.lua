@@ -38,7 +38,7 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
 
   -- Icons
-  use("kyazdani42/nvim-web-devicons")
+  use("nvim-tree/nvim-web-devicons")
 
   -- Colorschema
   use("rebelot/kanagawa.nvim")
@@ -50,7 +50,7 @@ return require("packer").startup(function(use)
     config = function()
       require("mrdupin.configs.lualine")
     end,
-    requires = { "kyazdani42/nvim-web-devicons" },
+    requires = { "nvim-tree/nvim-web-devicons" },
   })
 
   -- Treesitter
@@ -132,9 +132,12 @@ return require("packer").startup(function(use)
   use({
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v2.x",
+      config = function()
+          require("mrdupin.configs.neotree")
+      end,
       requires = {
           "nvim-lua/plenary.nvim",
-          "kyazdani42/nvim-web-devicons",
+          "nvim-tree/nvim-web-devicons",
           "MunifTanjim/nui.nvim",
       },
   })
@@ -213,7 +216,7 @@ return require("packer").startup(function(use)
   -- A pretty list for showing diagnostics, references, telescope results, quickfix and location
   use {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
       }

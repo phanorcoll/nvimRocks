@@ -37,3 +37,8 @@ o.incs = true -- While typing a search command, show where the pattern, as it wa
 o.smartindent = true -- Do smart autoindenting when starting a new line.
 o.updatetime = 300 -- Number of milliseconds to wait in Insert mode after changing the text before |InsertIdle| is triggered.
 o.termguicolors = true
+
+-- enable webicons
+global.webdevicons_enabled = true
+
+

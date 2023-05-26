@@ -32,6 +32,7 @@ map("n", "<leader>p", "<CMD>split<CR>")
 -- NeoTree
 map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
 map("n", "<leader>o", "<CMD>Neotree focus<CR>")
+map("n", "<leader>g", "<CMD>Neotree git_status<CR>")
 
 -- Buffer
 map("n", "<TAB>", "<CMD>bnext<CR>")
