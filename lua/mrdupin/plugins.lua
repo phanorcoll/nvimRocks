@@ -216,10 +216,28 @@ return require("packer").startup(function(use)
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
+    end
+  }
+
+  -- copilot
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("mrdupin.configs.copilot")
+    end,
+  }
+
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua", "nvim-cmp" },
+    config = function ()
+      require("copilot_cmp").setup({
+        event = { "InsertEnter", "LspAttach" },
+        fix_pairs = true,
+      })
     end
   }
 
