@@ -1,38 +1,74 @@
+-- nvim-cmp's documentation says we should set completeopt with the following values:
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
 local status, cmp = pcall(require, "cmp")
 if not status then
     return
 end
 
+local statusSnip, luasnip = pcall(require, 'luasnip')
+if not statusSnip then
+    return
+end
+
+local select_opts = {behavior = cmp.SelectBehavior.Select}
 local lspkind = require("lspkind")
+local icons = require('nvim-web-devicons')
+
+local kind_icons = {
+  Text = "",
+  Copilot = "" ,
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
+}
 
 cmp.setup({
-    formatting = {
-      format = lspkind.cmp_format({
-        mode = "symbol",
-        max_width = 50,
-        symbol_map = { Copilot = "" }
-      })
-    },
-    sorting = {
-      priority_weight = 2,
-      comparators = {
-        -- Below is the default comparitor list and order for nvim-cmp
-        cmp.config.compare.offset,
-        -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-        cmp.config.compare.exact,
-        cmp.config.compare.score,
-        cmp.config.compare.recently_used,
-        cmp.config.compare.locality,
-        cmp.config.compare.kind,
-        cmp.config.compare.sort_text,
-        cmp.config.compare.length,
-        cmp.config.compare.order,
-      },
+    view = {            
+      entries = {name = 'custom', selection_order = 'near_cursor' }
     },
     snippet = {
-        expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-        end,
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end
+    },
+    -- keyword_length sets how many characters are necesary to begin querying the source.
+    sources = cmp.config.sources({
+        { name = "luasnip" }, -- Shows available snippets and expands them if they are chosen.
+        { name = "copilot" }, -- Shows suggestions based on Copilot
+        { name = "nvim_lsp" }, -- Shows suggestions based on the response of a language server.
+        { name = "path" }, -- Autocomplete file paths.
+        { name = "buffer" }, -- Suggests words found in the current buffer.
+    }),
+    formatting = {
+     format = lspkind.cmp_format({
+        mode = "symbol_text",
+        max_width = 80,
+        symbol_map = kind_icons,
+      })
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -44,16 +80,27 @@ cmp.setup({
             select = true,
         }),
     }),
-    sources = cmp.config.sources({
-        { name = "copilot", group_index = 2},
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "path", group_index = 2 },
-        { name = "buffer", group_index = 2 },
-        { name = "luasnip", group_index = 2 },
-    }),
 })
+
+-- gray
+vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg='NONE', strikethrough=true, fg='#808080' })
+-- blue
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg='NONE', fg='#569CD6' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link='CmpIntemAbbrMatch' })
+-- light blue
+vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg='NONE', fg='#9CDCFE' })
+vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link='CmpItemKindVariable' })
+vim.api.nvim_set_hl(0, 'CmpItemKindText', { link='CmpItemKindVariable' })
+-- pink
+vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg='NONE', fg='#C586C0' })
+vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link='CmpItemKindFunction' })
+-- front
+vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg='NONE', fg='#D4D4D4' })
+vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link='CmpItemKindKeyword' })
+vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link='CmpItemKindKeyword' })
 
 vim.cmd([[
   set completeopt=menuone,noinsert,noselect
   highlight! default link CmpItemKind CmpItemMenuDefault
 ]])
+
