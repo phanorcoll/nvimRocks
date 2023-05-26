@@ -32,7 +32,7 @@ map("n", "<leader>p", "<CMD>split<CR>")
 -- NeoTree
 map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
 map("n", "<leader>o", "<CMD>Neotree focus<CR>")
-map("n", "<leader>g", "<CMD>Neotree git_status<CR>")
+map("n", "<leader>gg", "<CMD>Neotree git_status<CR>")
 
 -- Buffer
 map("n", "<TAB>", "<CMD>bnext<CR>")
@@ -68,7 +68,10 @@ map("n", "<leader>cc", "<CMD>TodoTelescope<CR>")
 -- Trouble
 map("n", "<leader>tt", "<CMD>TroubleToggle<CR>")
 
-
+-- Go 
+map("n", "<leader>gsj", "<CMD>GoTagAdd json<CR>")
+map("n", "<leader>gc", "<CMD>GoCmt<CR>")
+map("n", "<leader>gt", "<CMD>GoTestAdd<CR>")
 
 -- Breaking a bad habit
 map("n", "<Up>", [[:echoerr "Dont use arrow keys!!"<cr>]])

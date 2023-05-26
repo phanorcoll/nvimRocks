@@ -254,10 +254,19 @@ return require("packer").startup(function(use)
   use({
     "leoluz/nvim-dap-go",
     requires = { "mfussenegger/nvim-dap" },
-    filetypes = { "go" },
+    ft = { "go" },
     config = function()
       require("dap-go").setup()
     end,
   })
+
+  -- Go extras
+  use({
+    "olexsmir/gopher.nvim",
+    ft = { "go" },
+    conifg = function()
+      require("gopher").setup()
+    end,
+  }) 
 
 end)
