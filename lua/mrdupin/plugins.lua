@@ -248,5 +248,16 @@ return require("packer").startup(function(use)
       })
     end
   }
+  
+  -- Go debuging
+  use({"mfussenegger/nvim-dap"})
+  use({
+    "leoluz/nvim-dap-go",
+    requires = { "mfussenegger/nvim-dap" },
+    filetypes = { "go" },
+    config = function()
+      require("dap-go").setup()
+    end,
+  })
 
 end)
