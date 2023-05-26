@@ -1,15 +1,8 @@
 -- nvim-cmp's documentation says we should set completeopt with the following values:
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
-require('luasnip.loaders.from_vscode').lazy_load()
-
 local status, cmp = pcall(require, "cmp")
 if not status then
-    return
-end
-
-local statusSnip, luasnip = pcall(require, 'luasnip')
-if not statusSnip then
     return
 end
 
@@ -24,12 +17,12 @@ lspkind.init({
 cmp.setup({
     snippet = {
       expand = function(args)
-        luasnip.lsp_expand(args.body)
+        require'luasnip'.lsp_expand(args.body)
       end
     },
     sources = cmp.config.sources({
-        { name = "copilot" }, -- Shows suggestions based on Copilot
         { name = "luasnip" }, -- Shows available snippets and expands them if they are chosen.
+        { name = "copilot" }, -- Shows suggestions based on Copilot
         { name = "nvim_lsp" }, -- Shows suggestions based on the response of a language server.
         { name = "path" }, -- Autocomplete file paths.
         { name = "buffer" }, -- Suggests words found in the current buffer.
@@ -62,6 +55,15 @@ cmp.setup({
             select = true,
         }),
     }),
+})
+
+ -- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+  }, {
+    { name = 'buffer' },
+  })
 })
 
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance

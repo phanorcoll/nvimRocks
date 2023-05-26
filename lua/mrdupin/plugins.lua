@@ -97,6 +97,11 @@ return require("packer").startup(function(use)
       end,
   })
 
+  use ({ 
+    "saadparwaiz1/cmp_luasnip",
+    after = "nvim-cmp",
+  })
+
   use("hrsh7th/cmp-nvim-lsp")
 
   use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
