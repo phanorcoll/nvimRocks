@@ -15,60 +15,42 @@ end
 
 local select_opts = {behavior = cmp.SelectBehavior.Select}
 local lspkind = require("lspkind")
-local icons = require('nvim-web-devicons')
-
-local kind_icons = {
-  Text = "",
-  Copilot = "" ,
-  Method = "󰆧",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "󰇽",
-  Variable = "󰂡",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈙",
-  Reference = "",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "",
-  Event = "",
-  Operator = "󰆕",
-  TypeParameter = "󰅲",
-}
+lspkind.init({
+  symbol_map = {
+    Copilot = "",
+  },
+})
 
 cmp.setup({
-    view = {            
-      entries = {name = 'custom', selection_order = 'near_cursor' }
-    },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
       end
     },
-    -- keyword_length sets how many characters are necesary to begin querying the source.
     sources = cmp.config.sources({
-        { name = "luasnip" }, -- Shows available snippets and expands them if they are chosen.
         { name = "copilot" }, -- Shows suggestions based on Copilot
+        { name = "luasnip" }, -- Shows available snippets and expands them if they are chosen.
         { name = "nvim_lsp" }, -- Shows suggestions based on the response of a language server.
         { name = "path" }, -- Autocomplete file paths.
         { name = "buffer" }, -- Suggests words found in the current buffer.
     }),
+    window = {
+      completion = {
+        winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+        col_offset = -3,
+        side_padding = 0,
+      },
+    },
     formatting = {
-     format = lspkind.cmp_format({
-        mode = "symbol_text",
-        max_width = 80,
-        symbol_map = kind_icons,
-      })
+      fields = { "kind", "abbr", "menu" },
+      format = function(entry, vim_item)
+        local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 80 })(entry, vim_item)
+        local strings = vim.split(kind.kind, "%s", { trimempty = true })
+        kind.kind = " " .. (strings[1] or "x") .. " "
+        kind.menu = "    (" .. (strings[2] or "xx") .. ")"
+
+        return kind
+      end,
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -82,6 +64,9 @@ cmp.setup({
     }),
 })
 
+-- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
+-- copilot
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {bg ="#6CC644", fg = "#000000"})
 -- gray
 vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg='NONE', strikethrough=true, fg='#808080' })
 -- blue
