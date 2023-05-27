@@ -57,6 +57,17 @@ My personal configuration for Neovim
 - [hrsh7th/cmp-buffer:](https://github.com/hrsh7th/cmp-buffer) nvim-cmp source for buffer words
 - [williamboman/mason-lspconfig.nvim:](https://github.com/williamboman/mason-lspconfig.nvim) Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
 
+## Needed packages
+
+- npm install -g eslint_d
+- npm install -g typescript-language-server typescript
+- npm install -g @tailwindcss/language-server
+- npm install -g vscode-css-languageserver-bin
+
+- go install github.com/segmentio/golines@latest
+- go install mvdan.cc/gofumpt@latest
+- go install github.com/go-delve/delve/cmd/dlv@latest
+
 ## Feedback
 
 If you have any feedback, better plugins, configurations, please reach out at [@phanor](https://twitter.com/phanor)
