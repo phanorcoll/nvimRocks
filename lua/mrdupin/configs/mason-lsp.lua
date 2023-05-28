@@ -1,18 +1,19 @@
 local status, masonlsp = pcall(require, "mason-lspconfig")
 
 if not status then
-    return
+  return
 end
 
 masonlsp.setup({
-    automatic_installation = true,
-    ensure_installed = {
-        "cssls",
-        "eslint",
-        "html",
-        "jsonls",
-        "tsserver",
-        "tailwindcss",
-        "gopls",
-    },
+  automatic_installation = true,
+  ensure_installed = {
+    "cssls",
+    "eslint",
+    "html",
+    "jsonls",
+    "tsserver",
+    "tailwindcss",
+    "gopls",
+    "lua_ls",
+  },
 })
