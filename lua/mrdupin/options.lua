@@ -42,4 +42,7 @@ o.wrap = false
 -- enable webicons
 global.webdevicons_enabled = true
 
-
+-- vgit https://github.com/tanvirtin/vgit.nvim
+o.updatetime = 300
+o.incsearch = false
+vim.wo.signcolumn = 'yes'

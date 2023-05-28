@@ -165,12 +165,21 @@ return require("packer").startup(function(use)
   })
 
   -- Git
-  use({
-      "lewis6991/gitsigns.nvim",
-      config = function()
-          require("mrdupin.configs.gitsigns")
-      end,
-  })
+  -- use({
+  --     "lewis6991/gitsigns.nvim",
+  --     config = function()
+  --         require("mrdupin.configs.gitsigns")
+  --     end,
+  -- })
+  use {
+    'tanvirtin/vgit.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require("mrdupin.configs.vgit")
+    end,
+  }
 
   -- Markdown Preview
   use({
@@ -268,9 +277,6 @@ return require("packer").startup(function(use)
       require("gopher").setup()
     end,
   }) 
-
-  -- Git blame
-  use({"f-person/git-blame.nvim"})
 
 
 end)
