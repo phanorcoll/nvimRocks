@@ -25,9 +25,9 @@ vim.cmd([[
 
 -- Automatically run: PackerCompile
 vim.api.nvim_create_autocmd("BufWritePost", {
-    group = vim.api.nvim_create_augroup("PACKER", { clear = true }),
-    pattern = "plugins.lua",
-    command = "source <afile> | PackerCompile",
+  group = vim.api.nvim_create_augroup("PACKER", { clear = true }),
+  pattern = "plugins.lua",
+  command = "source <afile> | PackerCompile",
 })
 
 return require("packer").startup(function(use)
@@ -55,49 +55,49 @@ return require("packer").startup(function(use)
 
   -- Treesitter
   use({
-      "nvim-treesitter/nvim-treesitter",
-      run = function()
-          require("nvim-treesitter.install").update({ with_sync = true })
-      end,
-      config = function()
-          require("mrdupin.configs.treesitter")
-      end,
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+    config = function()
+      require("mrdupin.configs.treesitter")
+    end,
   })
 
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
-   -- Telescope
+  -- Telescope
   use({
-      "nvim-telescope/telescope.nvim",
-      tag = "0.1.1",
-      requires = { { "nvim-lua/plenary.nvim" } },
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.1",
+    requires = { { "nvim-lua/plenary.nvim" } },
   })
 
   -- LSP
   use({
-      "neovim/nvim-lspconfig",
-      config = function()
-          require("mrdupin.configs.lsp")
-      end,
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("mrdupin.configs.lsp")
+    end,
   })
 
   use("onsails/lspkind-nvim")
   use({
-      "L3MON4D3/LuaSnip",
-      -- follow latest release.
-      tag = "v<CurrentMajor>.*",
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    tag = "v<CurrentMajor>.*",
   })
 
   -- cmp: Autocomplete
   use({
-      "hrsh7th/nvim-cmp",
-      event = "InsertEnter",
-      config = function()
-          require("mrdupin.configs.cmp")
-      end,
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    config = function()
+      require("mrdupin.configs.cmp")
+    end,
   })
 
-  use ({ 
+  use({
     "saadparwaiz1/cmp_luasnip",
     after = "nvim-cmp",
   })
@@ -110,58 +110,58 @@ return require("packer").startup(function(use)
 
   -- LSP diagnostics, code actions, and more via Lua.
   use({
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-          require("mrdupin.configs.null-ls")
-      end,
-      requires = { "nvim-lua/plenary.nvim" },
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("mrdupin.configs.null-ls")
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
   })
 
   -- Mason: Portable package manager
-	use({
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	})
+  use({
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  })
 
-	use({
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mrdupin.configs.mason-lsp")
-		end,
-		after = "mason.nvim",
-	})
+  use({
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mrdupin.configs.mason-lsp")
+    end,
+    after = "mason.nvim",
+  })
 
   -- File manager
   use({
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v2.x",
-      config = function()
-          require("mrdupin.configs.neotree")
-      end,
-      requires = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons",
-          "MunifTanjim/nui.nvim",
-      },
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    config = function()
+      require("mrdupin.configs.neotree")
+    end,
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
   })
 
   -- Show colors
   use({
-      "norcalli/nvim-colorizer.lua",
-      config = function()
-          require("colorizer").setup({ "*" })
-      end,
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "*" })
+    end,
   })
 
   -- Terminal
   use({
-      "akinsho/toggleterm.nvim",
-      tag = "*",
-      config = function()
-          require("mrdupin.configs.toggleterm")
-      end,
+    "akinsho/toggleterm.nvim",
+    tag = "*",
+    config = function()
+      require("mrdupin.configs.toggleterm")
+    end,
   })
 
   -- Git
@@ -183,36 +183,36 @@ return require("packer").startup(function(use)
 
   -- Markdown Preview
   use({
-      "iamcco/markdown-preview.nvim",
-      run = function()
-          vim.fn["mkdp#util#install"]()
-      end,
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   })
 
   -- Auto pairs
   use({
-      "windwp/nvim-autopairs",
-      config = function()
-          require("mrdupin.configs.autopairs")
-      end,
+    "windwp/nvim-autopairs",
+    config = function()
+      require("mrdupin.configs.autopairs")
+    end,
   })
 
   -- Background Transparent
   use({
-      "xiyaowong/nvim-transparent",
-      config = function()
-          require("transparent").setup({
-              extra_groups = {
-                  "BufferLineTabClose",
-                  "BufferlineBufferSelected",
-                  "BufferLineFill",
-                  "BufferLineBackground",
-                  "BufferLineSeparator",
-                  "BufferLineIndicatorSelected",
-              },
-              exclude_groups = {},
-          })
-      end,
+    "xiyaowong/nvim-transparent",
+    config = function()
+      require("transparent").setup({
+        extra_groups = {
+          "BufferLineTabClose",
+          "BufferlineBufferSelected",
+          "BufferLineFill",
+          "BufferLineBackground",
+          "BufferLineSeparator",
+          "BufferLineIndicatorSelected",
+        },
+        exclude_groups = {},
+      })
+    end,
   })
 
   -- Easily comment code
@@ -250,16 +250,16 @@ return require("packer").startup(function(use)
   use {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua", "nvim-cmp" },
-    config = function ()
+    config = function()
       require("copilot_cmp").setup({
         event = { "InsertEnter", "LspAttach" },
         fix_pairs = true,
       })
     end
   }
-  
+
   -- Go debuging
-  use({"mfussenegger/nvim-dap"})
+  use({ "mfussenegger/nvim-dap" })
   use({
     "leoluz/nvim-dap-go",
     requires = { "mfussenegger/nvim-dap" },
@@ -276,7 +276,8 @@ return require("packer").startup(function(use)
     conifg = function()
       require("gopher").setup()
     end,
-  }) 
+  })
 
-
+  -- tmux integration
+  use({ "christoomey/vim-tmux-navigator" })
 end)
