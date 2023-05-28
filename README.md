@@ -56,6 +56,7 @@ My personal configuration for Neovim
 - [hrsh7th/cmp-path:](https://github.com/hrsh7th/cmp-path) nvim-cmp source for path
 - [hrsh7th/cmp-buffer:](https://github.com/hrsh7th/cmp-buffer) nvim-cmp source for buffer words
 - [williamboman/mason-lspconfig.nvim:](https://github.com/williamboman/mason-lspconfig.nvim) Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
+- [tanvirtin/vgit.nvim](https://github.com/tanvirtin/vgit.nvim) Visual Git Plugin for Neovim to enhance your git experience
 
 ## Needed packages
 
