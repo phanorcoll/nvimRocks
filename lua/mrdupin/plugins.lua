@@ -269,4 +269,8 @@ return require("packer").startup(function(use)
     end,
   }) 
 
+  -- Git blame
+  use({"f-person/git-blame.nvim"})
+
+
 end)
