@@ -164,13 +164,6 @@ return require("packer").startup(function(use)
     end,
   })
 
-  -- Git
-  -- use({
-  --     "lewis6991/gitsigns.nvim",
-  --     config = function()
-  --         require("mrdupin.configs.gitsigns")
-  --     end,
-  -- })
   use {
     'tanvirtin/vgit.nvim',
     requires = {
