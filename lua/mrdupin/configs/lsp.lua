@@ -82,3 +82,8 @@ nvim_lsp.lua_ls.setup({
     },
   },
 })
+
+nvim_lsp.svelte.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
