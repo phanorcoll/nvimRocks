@@ -10,3 +10,9 @@ if themeStatus then
 else
   return
 end
+
+vim.filetype.add({
+  extension = {
+    postcss = 'css',
+  }
+})
