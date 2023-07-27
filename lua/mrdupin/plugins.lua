@@ -264,12 +264,27 @@ return require("packer").startup(function(use)
 
   -- Go extras
   use({
-    "olexsmir/gopher.nvim",
-    ft = { "go" },
-    conifg = function()
-      require("gopher").setup()
+    'ray-x/go.nvim',
+    config = function()
+      require("go").setup()
     end,
   })
+  use 'ray-x/guihua.lua' -- recommended if need floating window support
+  -- use({
+  --   "olexsmir/gopher.nvim",
+  --   ft = { "go" },
+  --   conifg = function()
+  --     require("gopher").setup {
+  --       commands = {
+  --         go = "go",
+  --         gomodifytags = "gomodifytags",
+  --         gotests = "~/go/bin/gotests", -- also you can set custom command path
+  --         impl = "impl",
+  --         iferr = "iferr",
+  --       },
+  --     }
+  --   end,
+  -- })
 
   -- tmux integration
   use({ "christoomey/vim-tmux-navigator" })
