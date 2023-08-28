@@ -20,6 +20,10 @@ return {
   map("n", "<leader>h", "<CMD>split<CR>"),
 
   -- Exit insert mode
-  map("i", "jk", "<ESC>")
+  map("i", "jk", "<ESC>"),
+
+  -- Buffer
+  map("n", "<TAB>", "<CMD>bnext<CR>"),
+  map("n", "<S-TAB>", "<CMD>bprevious<CR>"),
 
 }
