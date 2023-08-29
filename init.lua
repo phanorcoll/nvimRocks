@@ -321,7 +321,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'dockerfile', 'go', 'lua', 'python', 'rust', 'svelte', 'tsx', 'typescript', 'vimdoc',
+  ensure_installed = { 'css', 'dockerfile', 'go', 'lua', 'python', 'rust', 'svelte', 'tsx', 'typescript', 'vimdoc',
     'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -453,6 +453,8 @@ local servers = {
   svelte = {},
   docker_compose_language_service = {},
   dockerls = {},
+  cssls = {},
+  tailwindcss = {},
 
   lua_ls = {
     Lua = {
