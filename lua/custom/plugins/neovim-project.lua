@@ -1,3 +1,5 @@
+vim.keymap.set('n', '<leader>hi', ':Telescope neovim-project history<CR>', { desc = 'Shows projects' })
+vim.keymap.set('n', '<leader>di', ':Telescope neovim-project discover<CR>', { desc = 'Find project' })
 return {
   "coffebar/neovim-project",
   opts = {
