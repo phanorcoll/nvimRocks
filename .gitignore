@@ -3,4 +3,3 @@ test.sh
 .luarc.json
 nvim
 lazy-lock.json
-lua/custom/plugins/neovim-project.lua
